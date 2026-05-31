@@ -342,7 +342,10 @@
     font-size: 2.5rem; font-weight: 300; color: var(--navy); line-height: 1;
   }
   .stat-label { font-size: 0.8rem; letter-spacing: 0.05em; color: #666; margin-top: 0.5rem; }
-  .about-visual { display: flex; align-items: flex-start; justify-content: center; position: relative; }
+  .about-visual {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; padding: 0;
+}
   .about-visual img {
     width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%);
     object-fit: contain;
@@ -526,7 +529,7 @@
     .hamburger { display: flex; }
     section { padding: 4rem 2rem; }
     .about { grid-template-columns: 1fr; gap: 2rem; }
-    .about-visual { order: -1; text-align: center; }
+   .about-visual { order: -1; text-align: center; padding: 0; margin: 0; }
     .about-visual img { max-width: 260px !important; object-fit: contain; width: auto; }
     .services-grid { grid-template-columns: 1fr; }
     .blog-grid { grid-template-columns: 1fr; }
