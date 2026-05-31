@@ -343,7 +343,10 @@
   }
   .stat-label { font-size: 0.8rem; letter-spacing: 0.05em; color: #666; margin-top: 0.5rem; }
   .about-visual { display: flex; align-items: flex-start; justify-content: center; position: relative; }
-  .about-visual img { width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%); }
+  .about-visual img {
+    width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%);
+    height: 500px; object-fit: cover; object-position: center top;
+}
 
   /* BLOG PREVIEW — sección nueva entre servicios y enfoque */
   .blog-preview { background: var(--beige-light); }
