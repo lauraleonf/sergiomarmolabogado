@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "http://sergiomarmolabogado.es/*"
+  to = "https://sergiomarmolabogado.es/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.sergiomarmolabogado.es/*"
+  to = "https://sergiomarmolabogado.es/:splat"
+  status = 301
+  force = true
