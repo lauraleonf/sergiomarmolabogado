@@ -5,57 +5,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GA4: carga condicional según consentimiento de cookies -->
+<!-- ============================================================
+     GOOGLE ANALYTICS 4 (GA4)
+     Instrucciones:
+     1. Ir a analytics.google.com y crear propiedad GA4
+     2. Reemplazar G-LS78CZ0KRG por tu ID real (ej: G-A1B2C3D4E5)
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS78CZ0KRG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  function loadGA() {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-LS78CZ0KRG';
-    document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', 'G-LS78CZ0KRG', { anonymize_ip: true });
-  }
+  gtag('js', new Date());
+  gtag('config', 'G-LS78CZ0KRG');
 </script>
-
-<title>Abogado Mercantil para Empresas y Autónomos | Sergio Mármol · Madrid, Jaén y Almería</title>
-<meta name="description" content="Abogado mercantil y societario para pymes y autónomos. Holdings, pactos de socios, reestructuraciones, contratos, empresa familiar y M&A. Presencial y online. Madrid, Jaén y Almería.">
+<title>Sergio Mármol · Abogado Mercantil para Empresas y Autónomos | Madrid, Jaén y Almería</title>
+<meta name="description" content="Abogado mercantilista para pymes y autónomos. Holdings, reestructuraciones, pactos de socios, contratos mercantiles, empresa familiar, M&A y secretaría societaria. Hago crecer tu negocio y lo protejo. Madrid, Jaén y Almería.">
+<meta name="keywords" content="abogado mercantil, abogado mercantilista, abogado societario, abogado empresas, abogado pymes, abogado autónomos, holding empresarial, reestructuración societaria, pacto de socios, contratos mercantiles, empresa familiar, secretaría societaria, M&A, abogado mercantil Madrid, abogado mercantil Jaén, abogado mercantil Almería">
 <meta name="author" content="Sergio Mármol Méndez">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sergiomarmolabogado.es/">
-
 <!-- Open Graph -->
-<meta property="og:title" content="Abogado Mercantil para Empresas y Autónomos | Sergio Mármol">
-<meta property="og:description" content="Abogado mercantil y societario para pymes y autónomos. Holdings, pactos de socios, contratos, M&A y reestructuraciones. Madrid, Jaén y Almería.">
+<meta property="og:title" content="Sergio Mármol · Abogado Mercantil para Empresas y Autónomos">
+<meta property="og:description" content="Abogado mercantilista para pymes y autónomos. Holdings, reestructuraciones, pactos de socios, contratos, empresa familiar y M&A. Madrid, Jaén y Almería.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sergiomarmolabogado.es/">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://sergiomarmolabogado.es/sergiomarmolabogado.png">
-
-<!-- Schema: LegalService -->
+<!-- Schema.org JSON-LD: LegalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "name": "Sergio Mármol Abogado",
-  "description": "Abogado mercantil y societario especializado en asesoramiento jurídico a pymes, autónomos y startups. Pactos de socios, contratos mercantiles, M&A, conflictos societarios, holdings, reestructuraciones, empresa familiar, licitaciones públicas y responsabilidad de administradores.",
+  "description": "Abogado mercantil y societario especializado en asesoramiento jurídico a pymes, autónomos y startups. Pactos de socios, contratos mercantiles, M&A, conflictos societarios, licitaciones y responsabilidad de administradores.",
   "url": "https://sergiomarmolabogado.es",
   "telephone": "+34677074680",
   "email": "sergiomarmol@smlegal.es",
-  "image": "https://sergiomarmolabogado.es/sergiomarmolabogado.png",
   "priceRange": "€€",
   "areaServed": [
     { "@type": "City", "name": "Madrid", "addressCountry": "ES" },
     { "@type": "City", "name": "Jaén", "addressCountry": "ES" },
     { "@type": "City", "name": "Almería", "addressCountry": "ES" }
   ],
-  "serviceType": ["Derecho Mercantil","Derecho Societario","Holdings y Estructuración Societaria","Reestructuraciones Empresariales","Pactos de Socios","Contratos Mercantiles","Fusiones y Adquisiciones","Empresa Familiar","Secretaría Societaria","Licitaciones Públicas","Responsabilidad de Administradores"],
-  "knowsLanguage": ["es","en"]
+  "serviceType": ["Derecho Mercantil", "Derecho Societario", "Holdings y Estructuración Societaria", "Reestructuraciones Empresariales", "Pactos de Socios", "Contratos Mercantiles", "Fusiones y Adquisiciones", "Empresa Familiar", "Secretaría Societaria", "Licitaciones Públicas", "Responsabilidad de Administradores"],
+  "knowsLanguage": ["es", "en"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios jurídicos mercantiles",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Holdings y estructuración societaria" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reestructuraciones, fusiones y escisiones" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "De autónomo a sociedad limitada" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Empresa familiar y sucesión" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Secretaría societaria" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pactos de socios y gobierno corporativo" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contratos mercantiles" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conflictos societarios y litigación" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Licitaciones públicas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Responsabilidad de administradores" } }
+    ]
+  }
 }
 </script>
-
-<!-- Schema: Attorney -->
+<!-- Schema.org JSON-LD: Attorney (persona) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -65,22 +76,23 @@
   "url": "https://sergiomarmolabogado.es",
   "telephone": "+34677074680",
   "email": "sergiomarmol@smlegal.es",
-  "image": "https://sergiomarmolabogado.es/sergiomarmolabogado.png",
-  "sameAs": ["https://www.linkedin.com/in/sergiomarmolmendez/"],
+  "sameAs": [
+    "https://www.linkedin.com/in/sergiomarmolmendez/"
+  ],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Universidad de Jaén" },
     { "@type": "CollegeOrUniversity", "name": "ISDE Law & Business School" },
-    { "@type": "CollegeOrUniversity", "name": "New York University" },
-    { "@type": "CollegeOrUniversity", "name": "VIU — Universidad Internacional de Valencia" },
-    { "@type": "CollegeOrUniversity", "name": "Universidad Rey Juan Carlos" }
+    { "@type": "CollegeOrUniversity", "name": "New York University" }
   ],
-  "knowsAbout": ["Derecho Mercantil","Derecho Societario","Holdings","Estructuración Societaria","Pactos de Socios","Fusiones y Adquisiciones","Reestructuraciones Empresariales","Empresa Familiar","Contratos Mercantiles","Licitaciones Públicas","Due Diligence","Responsabilidad de Administradores","Secretaría Societaria"],
-  "memberOf": { "@type": "Organization", "name": "Ilustre Colegio de Abogados de Jaén" },
-  "areaServed": ["Madrid","Jaén","Almería"]
+  "knowsAbout": ["Derecho Mercantil", "Derecho Societario", "Holdings", "Estructuración Societaria", "Pactos de Socios", "Fusiones y Adquisiciones", "Reestructuraciones Empresariales", "Empresa Familiar", "Contratos Mercantiles", "Licitaciones Públicas", "Due Diligence", "Responsabilidad de Administradores", "Secretaría Societaria"],
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Ilustre Colegio de Abogados de Jaén"
+  },
+  "areaServed": ["Madrid", "Jaén", "Almería"]
 }
 </script>
-
-<!-- Schema: FAQPage -->
+<!-- Schema.org JSON-LD: FAQ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,47 +101,54 @@
     {
       "@type": "Question",
       "name": "¿Qué hace un abogado mercantilista?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción de contratos mercantiles, operaciones de compraventa de empresas (M&A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción de contratos mercantiles, operaciones de compraventa de empresas (M&A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Cuánto cuesta un abogado mercantil?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&A o un conflicto societario. Lo habitual es recibir un presupuesto cerrado antes de empezar, sin coste de consulta inicial." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&A o un conflicto societario. Contacta conmigo para valorar tu caso y recibir un presupuesto cerrado antes de empezar."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Necesito un abogado para crear una sociedad limitada?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No es legalmente obligatorio, pero sí muy recomendable. Un abogado mercantil te ayuda a elegir la forma jurídica adecuada, redactar los estatutos, preparar un pacto de socios si hay varios fundadores y evitar errores que pueden costar mucho dinero a largo plazo." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No es legalmente obligatorio, pero sí muy recomendable. Un abogado mercantil te ayuda a elegir la forma jurídica adecuada, redactar los estatutos, preparar un pacto de socios si hay varios fundadores y evitar errores que pueden costar mucho dinero a largo plazo."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Qué hago si tengo problemas con mi socio?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Lo primero es analizar si existe un pacto de socios y qué dicen los estatutos de la sociedad. Dependiendo de la situación, las opciones incluyen negociación, mediación, compraventa de participaciones, ejercicio del derecho de separación (art. 346 LSC) o, en último caso, disolución judicial (art. 363 LSC)." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo primero es analizar si existe un pacto de socios y qué dicen los estatutos de la sociedad. Dependiendo de la situación, las opciones incluyen negociación, mediación, compraventa de participaciones, ejercicio del derecho de separación o, en último caso, disolución judicial. Un abogado societario puede orientarte sobre la mejor estrategia."
+      }
     },
     {
       "@type": "Question",
       "name": "¿El administrador de una SL responde con su patrimonio personal?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, en determinados supuestos. Si el administrador incumple sus obligaciones legales — especialmente no convocar junta cuando la empresa está en causa de disolución (art. 367 LSC) — puede ser declarado responsable solidario de las deudas sociales con su patrimonio personal." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, en determinados supuestos. Si el administrador no cumple con sus deberes de diligencia, puede ser declarado responsable de las deudas de la sociedad con su patrimonio personal. Esto incluye deudas con Hacienda y la Seguridad Social. Es fundamental contar con asesoramiento preventivo para protegerse."
+      }
     },
     {
       "@type": "Question",
       "name": "¿Puedes atender mi caso online o tengo que ir presencialmente?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ofrezco asesoramiento tanto presencial como online por videollamada en toda España, con presencia principal en Madrid, Jaén y Almería. La mayoría de consultas y gestiones se resuelven perfectamente de forma telemática." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sergio Mármol ofrece asesoramiento tanto presencial como online por videollamada en toda España, con presencia principal en Madrid, Jaén y Almería. La mayoría de consultas y gestiones se pueden resolver perfectamente de forma telemática."
+      }
     }
   ]
 }
 </script>
-
-<!-- Schema: WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Sergio Mármol Abogado",
-  "url": "https://sergiomarmolabogado.es"
-}
-</script>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -146,12 +165,14 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
   html { scroll-behavior: smooth; }
 
+  /* Skip to content for screen readers */
   .skip-link {
     position: absolute; top: -40px; left: 0; padding: 8px 16px;
     background: var(--gold); color: var(--navy); z-index: 1000;
-    font-size: 0.85rem; text-decoration: none;
+    font-size: 0.85rem;
   }
   .skip-link:focus { top: 0; }
 
@@ -163,7 +184,7 @@
     font-size: 16px;
   }
 
-  /* NAV */
+  /* ===== NAV ===== */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
@@ -191,19 +212,11 @@
   }
   .nav-links a:hover::after { width: 100%; }
   .nav-links a:hover { color: #fff; }
-  .nav-blog {
-    color: var(--beige) !important;
-    border: 1px solid var(--gold);
-    padding: 0.35em 0.9em;
-    transition: all 0.3s;
-  }
-  .nav-blog:hover { background: var(--gold); color: var(--navy) !important; }
-  .nav-blog::after { display: none !important; }
 
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
   .hamburger span { width: 24px; height: 1.5px; background: var(--beige); transition: all 0.3s; }
 
-  /* HERO */
+  /* ===== HERO ===== */
   .hero {
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
@@ -228,12 +241,14 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 300;
     color: var(--beige); line-height: 1.1;
-    letter-spacing: 0.05em; margin-bottom: 0.3em;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3em;
   }
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold); font-weight: 400; margin-bottom: 1.5em;
+    color: var(--gold); font-weight: 400;
+    margin-bottom: 1.5em;
   }
   .hero-sub {
     font-family: 'Cormorant Garamond', serif;
@@ -246,31 +261,26 @@
     border: 1px solid var(--gold); color: var(--beige);
     text-decoration: none; font-size: 0.75rem;
     letter-spacing: 0.2em; text-transform: uppercase;
-    transition: all 0.4s ease; margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    margin-bottom: 4rem;
   }
   .hero-cta:hover { background: var(--gold); color: var(--navy); }
-  .hero-cta-secondary {
-    display: inline-block; padding: 1em 3em;
-    border: 1px solid rgba(232,224,212,0.25); color: rgba(232,224,212,0.6);
-    text-decoration: none; font-size: 0.75rem;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    transition: all 0.4s ease; margin-left: 1rem; margin-bottom: 4rem;
-  }
-  .hero-cta-secondary:hover { border-color: var(--beige); color: var(--beige); }
 
   .scroll-indicator {
     position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: rgba(232,224,212,0.3); font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase; animation: bounce 2s infinite;
+    color: rgba(232,224,212,0.55); font-size: 0.6rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
   }
   .scroll-indicator::after {
     content: ''; width: 1px; height: 40px;
     background: linear-gradient(to bottom, rgba(232,224,212,0.3), transparent);
   }
 
-  /* SECTIONS */
+  /* ===== SECTIONS ===== */
   section { padding: 6rem 4rem; }
+
   .section-label {
     font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--gold); font-weight: 500; margin-bottom: 1.5rem;
@@ -281,127 +291,215 @@
     color: var(--navy); line-height: 1.2; margin-bottom: 1.5rem;
   }
 
-  /* ABOUT */
+  /* ===== ABOUT ===== */
   .about {
     background: var(--cream);
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    max-width: 1200px; margin: 0 auto; align-items: start;
+    max-width: 1200px; margin: 0 auto;
+    align-items: start;
   }
   .about-text p {
     font-size: 1rem; line-height: 1.9; color: #444;
     margin-bottom: 1.5rem; font-weight: 300;
   }
-  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-  .stat { padding: 1.5rem; border-left: 2px solid var(--gold); }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin-top: 2rem;
+  }
+  .stat {
+    padding: 1.5rem; border-left: 2px solid var(--gold);
+  }
   .stat-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--navy); line-height: 1;
+    font-size: 2.5rem; font-weight: 300; color: var(--navy);
+    line-height: 1;
   }
   .stat-label { font-size: 0.8rem; letter-spacing: 0.05em; color: #666; margin-top: 0.5rem; }
+
   .about-visual {
-    display: flex; align-items: center; justify-content: center;
-    position: relative; padding: 0;
+    display: flex; align-items: flex-start; justify-content: center;
+    position: relative;
   }
-  /* FIX IMAGEN: sin width/height forzados, proporciones naturales */
   .about-visual img {
     width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%);
   }
+  .monogram-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14rem; font-weight: 300; color: var(--navy);
+    opacity: 0.08; line-height: 0.85;
+    position: relative;
+  }
+  .about-visual .accent-box {
+    position: absolute; width: 200px; height: 200px;
+    border: 1px solid var(--gold); opacity: 0.3;
+    top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(15deg);
+  }
 
-  /* SERVICES */
+  /* ===== SERVICES ===== */
   .services { background: var(--navy); color: var(--beige); }
   .services .section-title { color: var(--beige); }
   .services-inner { max-width: 1200px; margin: 0 auto; }
-  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    margin-top: 3rem;
+  }
   .service-card {
     padding: 2.5rem 2rem;
     border: 1px solid rgba(232,224,212,0.1);
-    transition: all 0.4s ease; position: relative; overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative; overflow: hidden;
   }
   .service-card::before {
     content: ''; position: absolute; top: 0; left: 0;
     width: 100%; height: 2px;
     background: linear-gradient(90deg, var(--gold), transparent);
-    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
   }
   .service-card:hover::before { transform: scaleX(1); }
   .service-card:hover { border-color: rgba(232,224,212,0.25); background: rgba(255,255,255,0.03); }
   .service-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--gold); opacity: 0.5; margin-bottom: 1rem;
+    font-size: 2.5rem; font-weight: 300; color: var(--gold); opacity: 0.5;
+    margin-bottom: 1rem;
   }
-  .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem;
+  }
   .service-desc { font-size: 0.9rem; line-height: 1.8; opacity: 0.8; font-weight: 300; }
 
-  /* APPROACH */
+  /* ===== APPROACH ===== */
   .approach { background: var(--beige-light); }
   .approach-inner { max-width: 1200px; margin: 0 auto; }
-  .approach-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
-  .approach-text { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; line-height: 1.7; color: var(--navy); }
+  .approach-content {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    margin-top: 3rem; align-items: start;
+  }
+  .approach-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300; line-height: 1.7;
+    color: var(--navy);
+  }
   .approach-list { list-style: none; }
   .approach-list li {
-    padding: 1.2rem 0; border-bottom: 1px solid rgba(45,45,94,0.1);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(45,45,94,0.1);
     display: flex; align-items: baseline; gap: 1rem;
     font-size: 0.95rem; font-weight: 300; color: #444;
   }
-  .approach-list li::before { content: '—'; color: var(--gold); font-weight: 600; }
+  .approach-list li::before {
+    content: '—'; color: var(--gold); font-weight: 600;
+  }
 
-  /* AREAS */
+  /* ===== AREAS ===== */
   .areas { background: var(--cream); }
   .areas-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-  .areas-grid { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
-  .area-item { padding: 2rem 2.5rem; border: 1px solid rgba(45,45,94,0.1); transition: all 0.3s; }
+  .areas-grid {
+    display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;
+  }
+  .area-item {
+    padding: 2rem 2.5rem;
+    border: 1px solid rgba(45,45,94,0.1);
+    transition: all 0.3s;
+  }
   .area-item:hover { border-color: var(--gold); }
-  .area-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--navy); }
+  .area-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--navy);
+  }
   .area-detail { font-size: 0.8rem; color: #777; letter-spacing: 0.1em; margin-top: 0.3rem; }
 
-  /* EDUCATION */
-  .edu-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; justify-content: center; }
-  .edu-item {
-    padding: 1.2rem 1.4rem; border: 1px solid var(--gold);
-    width: calc(33.333% - 0.7rem); text-align: center; box-sizing: border-box;
+  /* ===== EDUCATION ===== */
+  .edu-grid {
+    display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;
+    justify-content: center;
   }
-  .edu-school { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .edu-item {
+    padding: 1.2rem 1.4rem;
+    border: 1px solid var(--gold);
+    width: calc(33.333% - 0.7rem);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  @media (max-width: 900px) {
+    .edu-item { width: calc(50% - 0.5rem); }
+  }
+  @media (max-width: 600px) {
+    .edu-item { width: 100%; }
+  }
+  .edu-school {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
   .edu-degree { font-size: 0.8rem; color: #555; font-weight: 300; line-height: 1.4; }
 
-  /* FAQ — fondo diferenciado */
-  .faq { background: var(--navy-dark); }
-  .faq .section-title { color: var(--beige); }
-  .faq .section-label { color: var(--gold); }
-  .faq-list { margin-top: 2.5rem; }
-  .faq-item { border-bottom: 1px solid rgba(232,224,212,0.1); padding: 1.2rem 0; }
-  .faq-item summary {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--beige);
-    cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+  /* ===== CONTACT ===== */
+  .contact {
+    background: var(--navy); color: var(--beige);
+    text-align: center;
   }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after { content: '+'; font-size: 1.5rem; color: var(--gold); font-weight: 300; }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p { font-size: 0.95rem; line-height: 1.8; color: rgba(232,224,212,0.75); font-weight: 300; margin-top: 0.8rem; padding-right: 2rem; }
-  .faq-item p a { color: var(--gold); }
-
-  /* CONTACT */
-  .contact { background: var(--navy); color: var(--beige); text-align: center; }
   .contact .section-title { color: var(--beige); }
   .contact-inner { max-width: 700px; margin: 0 auto; }
-  .contact-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; opacity: 0.85; line-height: 1.7; margin-bottom: 3rem; }
+  .contact-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 300; opacity: 0.85;
+    line-height: 1.7; margin-bottom: 3rem;
+  }
   .contact-methods { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
-  .contact-item { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--beige); font-size: 1rem; font-weight: 300; transition: color 0.3s; }
+  .contact-item {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none; color: var(--beige);
+    font-size: 1rem; font-weight: 300;
+    transition: color 0.3s;
+  }
   .contact-item:hover { color: var(--gold); }
-  .contact-icon { width: 40px; height: 40px; border: 1px solid rgba(232,224,212,0.2); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; transition: border-color 0.3s; }
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid rgba(232,224,212,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; flex-shrink: 0;
+    transition: border-color 0.3s;
+  }
   .contact-item:hover .contact-icon { border-color: var(--gold); }
-  .contact-divider { width: 60px; height: 1px; background: rgba(232,224,212,0.15); margin: 2.5rem auto; }
-  .contact-form-wrapper { max-width: 520px; margin: 0 auto; text-align: left; }
-  .contact-form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--beige); text-align: center; margin-bottom: 2rem; }
+
+  .contact-divider {
+    width: 60px; height: 1px; background: rgba(232,224,212,0.15);
+    margin: 2.5rem auto;
+  }
+
+  .contact-form-wrapper {
+    max-width: 520px; margin: 0 auto; text-align: left;
+  }
+  .contact-form-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400; color: var(--beige);
+    text-align: center; margin-bottom: 2rem;
+  }
   .form-group { margin-bottom: 1.3rem; }
-  .form-group label { display: block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-weight: 400; }
-  .form-group input, .form-group textarea {
+  .form-group label {
+    display: block; font-size: 0.7rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .form-group input,
+  .form-group textarea {
     width: 100%; padding: 0.9rem 1rem;
-    background: rgba(255,255,255,0.05); border: 1px solid rgba(232,224,212,0.15);
-    color: var(--beige); font-family: 'Raleway', sans-serif; font-size: 0.9rem; font-weight: 300;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(232,224,212,0.15);
+    color: var(--beige); font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem; font-weight: 300;
     outline: none; transition: border-color 0.3s;
   }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(232,224,212,0.5); }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(232,224,212,0.5);
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
   .form-group textarea { resize: vertical; min-height: 120px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-submit {
@@ -412,71 +510,155 @@
     cursor: pointer; transition: all 0.4s ease; width: 100%;
   }
   .form-submit:hover { background: var(--gold); color: var(--navy); }
-  .form-success { display: none; text-align: center; padding: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); }
-  .form-rgpd { font-size: 0.72rem; color: rgba(232,224,212,0.4); margin-top: 0.8rem; line-height: 1.6; text-align: center; }
-  .form-rgpd a { color: rgba(232,224,212,0.55); }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold);
+  }
 
-  /* TESTIMONIALS */
-  .testimonials { background: var(--beige-light); }
-  .testimonials .section-title { color: var(--navy); }
-  .testimonials .section-label { color: var(--gold); }
+  .social-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
+  .social-links a {
+    color: var(--beige); text-decoration: none; font-size: 0.75rem;
+    letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  .social-links a:hover { opacity: 1; }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* ===== TESTIMONIALS CAROUSEL ===== */
+  .testimonials { background: var(--navy-dark); color: var(--beige); }
+  .testimonials .section-title { color: var(--beige); }
   .carousel { position: relative; margin-top: 2.5rem; }
-  .carousel-slide { display: none; padding: 0 1rem; animation: fadeIn 0.5s ease; }
+  .carousel-slide {
+    display: none; padding: 0 1rem;
+    animation: fadeIn 0.5s ease;
+  }
   .carousel-slide.active { display: block; }
-  .testimonial-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; font-style: italic; line-height: 1.8; color: var(--navy); opacity: 0.9; margin-bottom: 1.5rem; }
-  .testimonial-name { font-size: 0.9rem; font-weight: 500; color: var(--gold); letter-spacing: 0.05em; }
-  .testimonial-role { font-size: 0.75rem; color: #888; margin-top: 0.3rem; letter-spacing: 0.05em; }
-  .carousel-dots { display: flex; justify-content: center; gap: 0.6rem; margin-top: 2rem; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(45,45,94,0.15); cursor: pointer; transition: background 0.3s; padding: 0; border: none; }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 300; font-style: italic;
+    line-height: 1.8; opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  .testimonial-name {
+    font-size: 0.9rem; font-weight: 500; color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+  .testimonial-role {
+    font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+  .carousel-dots {
+    display: flex; justify-content: center; gap: 0.6rem;
+    margin-top: 2rem;
+  }
+  .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(232,224,212,0.2); cursor: pointer;
+    transition: background 0.3s;
+    padding: 0; border: none;
+  }
   .dot.active { background: var(--gold); }
-  .carousel-arrows { display: flex; justify-content: center; gap: 2rem; margin-top: 1.2rem; }
-  .carousel-arrow { color: rgba(45,45,94,0.3); font-size: 1.4rem; cursor: pointer; transition: color 0.3s; user-select: none; padding: 0.5rem; }
+  .carousel-arrows {
+    display: flex; justify-content: center; gap: 2rem;
+    margin-top: 1.2rem;
+  }
+  .carousel-arrow {
+    color: rgba(232,224,212,0.65); font-size: 1.4rem;
+    cursor: pointer; transition: color 0.3s;
+    user-select: none; padding: 0.5rem;
+  }
   .carousel-arrow:hover { color: var(--gold); }
-
-  /* FOCUS */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, .dot:focus-visible, .carousel-arrow:focus-visible {
-    outline: 2px solid var(--gold); outline-offset: 3px;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--navy-dark); padding: 2rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.7rem; color: rgba(232,224,212,0.3); letter-spacing: 0.1em; flex-wrap: wrap; gap: 0.5rem;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+
+  /* ===== FOCUS STYLES (keyboard accessibility) ===== */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, .dot:focus-visible, .carousel-arrow:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq { background: var(--beige-light); }
+  .faq-list { margin-top: 2.5rem; }
+  .faq-item {
+    border-bottom: 1px solid rgba(45,45,94,0.1);
+    padding: 1.2rem 0;
+  }
+  .faq-item summary {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 500; color: var(--navy);
+    cursor: pointer; list-style: none; display: flex;
+    justify-content: space-between; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-size: 1.5rem; color: var(--gold);
+    font-weight: 300; transition: transform 0.3s;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item p {
+    font-size: 0.95rem; line-height: 1.8; color: #444;
+    font-weight: 300; margin-top: 0.8rem; padding-right: 2rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-dark);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.7rem; color: rgba(232,224,212,0.6);
+    letter-spacing: 0.1em;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* RESPONSIVE */
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 900px) {
     nav { padding: 1rem 2rem; }
     nav.scrolled { padding: 0.8rem 2rem; }
     .nav-links { display: none; }
-    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); padding: 2rem; gap: 1.5rem; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--navy); padding: 2rem;
+      gap: 1.5rem;
+    }
     .hamburger { display: flex; }
+
     section { padding: 4rem 2rem; }
     .about { grid-template-columns: 1fr; gap: 2rem; }
-    .about-visual { order: -1; text-align: center; padding: 0; margin: 0; }
+    .about-visual { order: -1; text-align: center; padding-top: 0; }
     .about-visual img { max-width: 260px !important; }
     .services-grid { grid-template-columns: 1fr; }
     .approach-content { grid-template-columns: 1fr; gap: 2rem; }
     .areas-grid { gap: 1rem; }
     .area-item { padding: 1.2rem 1.5rem; }
-    .edu-item { width: calc(50% - 0.5rem); }
-    footer { flex-direction: column; text-align: center; padding: 2rem; }
-    .hero-cta-secondary { margin-left: 0; margin-top: 0.8rem; }
+    .edu-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
   }
+
   @media (max-width: 600px) {
     .hero-name { font-size: 3.2rem; }
     .about-stats { grid-template-columns: 1fr; }
-    .edu-item { width: 100%; }
+    .edu-grid { grid-template-columns: 1fr; }
     .areas-grid { flex-direction: column; align-items: center; }
-    .form-row { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -486,32 +668,26 @@
 
 <!-- NAV -->
 <nav id="navbar" aria-label="Navegación principal">
-  <a href="/" class="nav-logo">SERGIO MÁRMOL<span>Abogado</span></a>
+  <a href="/" class="nav-logo" aria-label="Sergio Mármol, Abogado Mercantil — Inicio">SERGIO MÁRMOL<span>Abogado</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#enfoque">Enfoque</a></li>
     <li><a href="#preguntas">FAQ</a></li>
     <li><a href="#contacto">Contacto</a></li>
-    <li><a href="/blog" class="nav-blog">Blog</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0"
-    onclick="document.getElementById('navLinks').classList.toggle('open')"
-    onkeydown="if(event.key==='Enter')document.getElementById('navLinks').classList.toggle('open')">
+  <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0" onclick="document.getElementById('navLinks').classList.toggle('open')" onkeydown="if(event.key==='Enter')document.getElementById('navLinks').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" aria-label="Presentación">
+<section class="hero">
   <div class="hero-content">
     <h1 class="hero-name">Sergio<br>Mármol</h1>
     <p class="hero-title">Abogado Mercantil &amp; Societario para Empresas y Autónomos</p>
     <p class="hero-sub">Desde estructurar tu empresa para hacerla crecer hasta protegerla cuando surgen problemas. Holdings, pactos de socios, contratos, M&amp;A, reestructuraciones y más.</p>
-    <div>
-      <a href="#contacto" class="hero-cta">Hablemos</a>
-      <a href="#servicios" class="hero-cta-secondary">Ver servicios</a>
-    </div>
+    <a href="#contacto" class="hero-cta">Hablemos</a>
   </div>
 </section>
 
@@ -523,7 +699,7 @@
   </div>
   <div class="about reveal">
     <div class="about-text">
-      <p>Mi trayectoria no es la de un abogado convencional. Antes de fundar mi propia firma, fui administrador y asesor legal interno de una empresa, donde gestioné contratos, lideré licitaciones, negocié con bancos y tomé decisiones de negocio.</p>
+      <p>Mi trayectoria no es la de un abogado convencional. Antes de fundar mi propia firma, he sido administrador y asesor legal interno de una empresa, donde gestioné contratos, lideré licitaciones, negocié con bancos y tomé decisiones de negocio.</p>
       <p>Esa experiencia me dio algo que no se aprende en los libros: la capacidad de entender tu problema como empresario, no solo como jurista. Hoy aplico esa visión 360° como abogado mercantil al servicio de pymes, autónomos y startups.</p>
       <div class="about-stats">
         <div class="stat">
@@ -537,8 +713,7 @@
       </div>
     </div>
     <div class="about-visual">
-      <img src="sergiomarmolabogado.png" loading="lazy"
-        alt="Sergio Mármol Méndez, abogado mercantil y societario en Madrid, Jaén y Almería">
+      <img src="sergio-marmol-abogado.png" loading="lazy" alt="Sergio Mármol, abogado mercantilista para empresas y autónomos en Madrid, Jaén y Almería" >
     </div>
   </div>
   <div class="reveal" style="max-width:1200px;margin:4rem auto 0;">
@@ -568,7 +743,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="servicios" class="services">
   <div class="services-inner reveal">
     <p class="section-label">Servicios</p>
@@ -584,7 +758,7 @@
       <div class="service-card">
         <div class="service-number">02</div>
         <h3 class="service-name">Reestructuraciones y Operaciones Corporativas</h3>
-        <p class="service-desc">Fusiones, escisiones, transformaciones societarias (SL a SA y viceversa) y operaciones de M&amp;A: due diligence, compraventa de participaciones y activos.</p>
+        <p class="service-desc">Fusiones, escisiones, transformaciones societarias (SL a SA y viceversa) y operaciones de M&A: due diligence, compraventa de participaciones y activos.</p>
       </div>
       <div class="service-card">
         <div class="service-number">03</div>
@@ -660,14 +834,23 @@
     <h2 class="section-title">Dónde trabajo</h2>
     <p style="color:#888;font-size:0.9rem;font-weight:300;max-width:550px;margin:0 auto 1rem;">Mi actividad principal se centra en estas zonas, aunque ofrezco asesoramiento online en toda España y flexibilidad para desplazarme donde me necesites.</p>
     <div class="areas-grid">
-      <div class="area-item"><div class="area-name">Madrid</div><div class="area-detail">Presencial y online</div></div>
-      <div class="area-item"><div class="area-name">Jaén</div><div class="area-detail">Presencial y online</div></div>
-      <div class="area-item"><div class="area-name">Almería</div><div class="area-detail">Presencial y online</div></div>
+      <div class="area-item">
+        <div class="area-name">Madrid</div>
+        <div class="area-detail">Presencial y online</div>
+      </div>
+      <div class="area-item">
+        <div class="area-name">Jaén</div>
+        <div class="area-detail">Presencial y online</div>
+      </div>
+      <div class="area-item">
+        <div class="area-name">Almería</div>
+        <div class="area-detail">Presencial y online</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ — fondo navy dark para diferenciarlo de areas -->
+<!-- FAQ (visible + schema arriba en head) -->
 <section class="faq" id="preguntas">
   <div class="faq-inner reveal" style="max-width:900px;margin:0 auto;">
     <p class="section-label">Preguntas frecuentes</p>
@@ -675,11 +858,11 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>¿Qué hace un abogado mercantilista?</summary>
-        <p>Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción y revisión de contratos mercantiles, operaciones de compraventa de empresas (M&amp;A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras.</p>
+        <p>Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción y revisión de contratos mercantiles, operaciones de compraventa de empresas (M&A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras.</p>
       </details>
       <details class="faq-item">
         <summary>¿Cuánto cuesta un abogado mercantil?</summary>
-        <p>Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&amp;A o un conflicto societario. Lo habitual es recibir un presupuesto cerrado antes de empezar, sin coste de consulta inicial. Contacta conmigo y te lo explico sin compromiso.</p>
+        <p>Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&A o un conflicto societario. Contacta conmigo para valorar tu caso y recibir un presupuesto cerrado antes de empezar.</p>
       </details>
       <details class="faq-item">
         <summary>¿Necesito un abogado para crear una sociedad limitada?</summary>
@@ -687,11 +870,11 @@
       </details>
       <details class="faq-item">
         <summary>¿Qué hago si tengo problemas con mi socio?</summary>
-        <p>Lo primero es analizar si existe un pacto de socios y qué dicen los estatutos de la sociedad. Dependiendo de la situación, las opciones incluyen negociación, mediación, compraventa de participaciones, ejercicio del derecho de separación (art. 346 LSC) o, en último caso, disolución judicial (art. 363 LSC). Como abogado societario puedo orientarte sobre la mejor estrategia.</p>
+        <p>Lo primero es analizar si existe un pacto de socios y qué dicen los estatutos de la sociedad. Dependiendo de la situación, las opciones incluyen negociación, mediación, compraventa de participaciones, ejercicio del derecho de separación o, en último caso, disolución judicial. Como abogado societario puedo orientarte sobre la mejor estrategia.</p>
       </details>
       <details class="faq-item">
         <summary>¿El administrador de una SL responde con su patrimonio personal?</summary>
-        <p>Sí, en determinados supuestos. Si el administrador incumple sus obligaciones legales — especialmente no convocar junta cuando la empresa está en causa de disolución (art. 367 LSC) — puede responder solidariamente con su patrimonio personal de las deudas sociales. También puede responder frente a Hacienda y la Seguridad Social. El asesoramiento preventivo es clave.</p>
+        <p>Sí, en determinados supuestos. Si el administrador no cumple con sus deberes de diligencia, puede ser declarado responsable de las deudas de la sociedad con su patrimonio personal, incluyendo deudas con Hacienda y la Seguridad Social. Es fundamental contar con asesoramiento preventivo para protegerse.</p>
       </details>
       <details class="faq-item">
         <summary>¿Puedes atender mi caso online?</summary>
@@ -708,63 +891,65 @@
     <h2 class="section-title">¿Hablamos?</h2>
     <p class="contact-subtitle">Si necesitas un abogado mercantilista que entienda tu negocio y hable tu idioma, estaré encantado de escucharte.</p>
     <div class="contact-methods">
-      <a href="mailto:sergiomarmol@smlegal.es" class="contact-item">
-        <div class="contact-icon">✉</div>
+      <a href="mailto:sergiomarmol@smlegal.es" class="contact-item" aria-label="Enviar email a Sergio Mármol">
+        <div class="contact-icon" aria-hidden="true">✉</div>
         <span>sergiomarmol@smlegal.es</span>
       </a>
-      <a href="tel:+34677074680" class="contact-item">
-        <div class="contact-icon">☎</div>
+      <a href="tel:+34677074680" class="contact-item" aria-label="Llamar a Sergio Mármol">
+        <div class="contact-icon" aria-hidden="true">☎</div>
         <span>+34 677 07 46 80</span>
       </a>
-      <a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" class="contact-item">
-        <div class="contact-icon">in</div>
+      <a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" class="contact-item" aria-label="Perfil de LinkedIn de Sergio Mármol">
+        <div class="contact-icon" aria-hidden="true">in</div>
         <span>LinkedIn · @sergiomarmolmendez</span>
       </a>
     </div>
     <div class="contact-divider"></div>
+
     <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,224,212,0.4);margin-bottom:0.5rem;">O si lo prefieres</p>
+
     <div class="contact-form-wrapper">
       <p class="contact-form-title">Envíame un mensaje</p>
       <div id="contactForm">
         <div class="form-row">
           <div class="form-group">
-            <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="form-group">
             <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa (opcional)" autocomplete="organization">
+            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa (opcional)">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
           </div>
           <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
           </div>
         </div>
         <div class="form-group">
-          <label for="asunto">Asunto <span aria-hidden="true">*</span></label>
+          <label for="asunto">Asunto</label>
           <input type="text" id="asunto" name="asunto" placeholder="¿En qué puedo ayudarte?" required>
         </div>
         <div class="form-group">
-          <label for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
+          <label for="mensaje">Mensaje</label>
           <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación..." required></textarea>
         </div>
         <button type="button" class="form-submit" onclick="enviarFormulario()">Enviar mensaje</button>
-        <p class="form-rgpd">Al enviar este formulario aceptas que tus datos sean tratados por Sergio Mármol Méndez para atender tu consulta. Consulta la <a href="/politica-privacidad.html">Política de Privacidad</a>.</p>
       </div>
       <div class="form-success" id="formSuccess">
         ✓ Mensaje enviado correctamente.<br>Te responderé lo antes posible.
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS CAROUSEL -->
 <section class="testimonials" style="padding-top:3rem;padding-bottom:3rem;">
   <div class="testimonials-inner reveal" style="max-width:700px;margin:0 auto;text-align:center;">
     <p class="section-label">Recomendaciones</p>
@@ -774,7 +959,7 @@
         <div class="carousel-slide active">
           <div class="testimonial-quote">"En todo momento me he sentido bien asesorada y acompañada, lo cual marca una gran diferencia. Su claridad a la hora de explicar cada paso y la dedicación con la que ha llevado mi caso han sido excelentes. Lo recomiendo a cualquier persona que necesite asesoramiento legal de calidad."</div>
           <div class="testimonial-name">Lola M.C.</div>
-          <div class="testimonial-role">Gerente de oficina en TOLDOS L&amp;L · Cliente</div>
+          <div class="testimonial-role">Gerente de oficina en TOLDOS L&L · Cliente</div>
         </div>
         <div class="carousel-slide">
           <div class="testimonial-quote">"En nuestra colaboración en un contrato de suministro y arrendamiento, transformó negociaciones complejas en acuerdos exitosos. Gestionó los puntos más delicados con precisión y agilidad. Destaco su impecable formación técnica, pero sobre todo, el valor que aporta su calidad humana al proceso."</div>
@@ -803,59 +988,69 @@
 <!-- FOOTER -->
 <footer>
   <span>© 2026 Sergio Mármol — Abogado Mercantil y Societario</span>
-  <span>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Madrid, Jaén y Almería</span>
-  <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
-    <a href="/aviso-legal.html" style="color:rgba(232,224,212,0.5);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Aviso Legal</a>
-    <a href="/politica-privacidad.html" style="color:rgba(232,224,212,0.5);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Privacidad</a>
-    <a href="/politica-cookies.html" style="color:rgba(232,224,212,0.5);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Cookies</a>
-    <a href="/blog" style="color:rgba(232,224,212,0.5);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Blog</a>
+  <span>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Abogado mercantilista en Madrid, Jaén y Almería</span>
+  <div style="margin-top:1rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
+    <a href="/aviso-legal.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Aviso Legal</a>
+    <a href="/politica-privacidad.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Privacidad</a>
+    <a href="/politica-cookies.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Cookies</a>
   </div>
 </footer>
 
 <!-- COOKIE BANNER -->
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);">
-  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
-    <p style="color:var(--beige);font-size:0.85rem;font-weight:300;margin:0;max-width:600px;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies.html" style="color:var(--gold);">Más información</a></p>
-    <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-      <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:var(--gold);color:var(--navy);border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
-      <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:var(--beige);border:1px solid rgba(232,224,212,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
-      <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(232,224,212,0.5);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
-    </div>
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+  <p style="color:var(--beige);font-size:0.85rem;font-weight:300;margin:0;max-width:600px;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies.html" style="color:var(--gold);">Más información</a></p>
+  <div style="display:flex;gap:0.8rem;">
+    <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:var(--gold);color:var(--navy);border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
+    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:var(--beige);border:1px solid rgba(232,224,212,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
+    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(232,224,212,0.5);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
   </div>
 </div>
 
 <script>
+  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
 
+  // Close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
 
+  // Form submission via Formspree
+  // IMPORTANTE: Sergio debe crear cuenta gratis en formspree.io y reemplazar
+  // 'TU_ID_FORMSPREE' por su ID real (ej: 'xpzvqkdl')
   function enviarFormulario() {
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
     const asunto = document.getElementById('asunto').value.trim();
     const mensaje = document.getElementById('mensaje').value.trim();
+
     if (!nombre || !email || !asunto || !mensaje) {
       alert('Por favor, completa los campos obligatorios.');
       return;
     }
+
     const btn = document.querySelector('.form-submit');
     btn.textContent = 'Enviando...';
     btn.style.pointerEvents = 'none';
+
     const data = {
-      nombre, empresa: document.getElementById('empresa').value.trim(),
-      email, telefono: document.getElementById('telefono').value.trim(),
-      asunto, mensaje
+      nombre: nombre,
+      empresa: document.getElementById('empresa').value.trim(),
+      email: email,
+      telefono: document.getElementById('telefono').value.trim(),
+      asunto: asunto,
+      mensaje: mensaje
     };
+
     fetch('https://formspree.io/f/xjgzvqkz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -866,36 +1061,44 @@
         document.getElementById('contactForm').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
-        const body = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
-        window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${body}`;
+        // Fallback: abrir email con los datos
+        const mailtoBody = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
+        window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${mailtoBody}`;
       }
     })
     .catch(() => {
-      const body = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
-      window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${body}`;
+      const mailtoBody = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
+      window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${mailtoBody}`;
     });
   }
-
+  // Cookie consent
   function acceptCookies() {
     document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
-    loadGA();
+    // GA4 already loaded in head — cookies now permitted
   }
+
   function rejectCookies() {
     document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
+    // Disable GA4
+    window['ga-disable-G-LS78CZ0KRG'] = true;
   }
+
+  // Show banner if no consent yet
   (function() {
     if (!document.cookie.includes('cookie_consent=')) {
-      document.getElementById('cookieBanner').style.display = 'block';
-    } else if (document.cookie.includes('cookie_consent=accepted')) {
-      loadGA();
+      document.getElementById('cookieBanner').style.display = 'flex';
+    } else if (document.cookie.includes('cookie_consent=rejected')) {
+      window['ga-disable-G-LS78CZ0KRG'] = true;
     }
   })();
 
+  // Testimonials carousel
   let currentSlide = 0;
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.dot');
+
   function goToSlide(n) {
     slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
@@ -903,12 +1106,15 @@
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
   }
+
   function changeSlide(dir) {
     let next = currentSlide + dir;
     if (next < 0) next = slides.length - 1;
     if (next >= slides.length) next = 0;
     goToSlide(next);
   }
+
+  // Auto-rotate every 6 seconds
   setInterval(() => changeSlide(1), 6000);
 </script>
 
