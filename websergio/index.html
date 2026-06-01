@@ -149,7 +149,12 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Preconnect para Google Fonts (elimina render-blocking) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fuentes: carga no bloqueante con media trick -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap"></noscript>
 <style>
   :root {
     --navy: #2d2d5e;
@@ -320,6 +325,7 @@
     display: flex; align-items: flex-start; justify-content: center;
     position: relative;
   }
+  .about-visual picture { display: contents; }
   .about-visual img {
     width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%);
   }
@@ -713,7 +719,10 @@
       </div>
     </div>
     <div class="about-visual">
-      <img src="sergio-marmol-abogado.png" loading="lazy" alt="Sergio Mármol, abogado mercantilista para empresas y autónomos en Madrid, Jaén y Almería" >
+      <picture>
+        <source srcset="sergiomarmolabogado.webp" type="image/webp">
+        <img src="sergiomarmolabogado.png" loading="lazy" decoding="async" width="760" height="696" alt="Sergio Mármol, abogado mercantilista para empresas y autónomos en Madrid, Jaén y Almería">
+      </picture>
     </div>
   </div>
   <div class="reveal" style="max-width:1200px;margin:4rem auto 0;">
