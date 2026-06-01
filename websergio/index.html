@@ -7,16 +7,13 @@
 
 <!-- ============================================================
      GOOGLE ANALYTICS 4 (GA4)
-     Instrucciones:
-     1. Ir a analytics.google.com y crear propiedad GA4
-     2. Reemplazar G-T7FH9PQYV7 por tu ID real (ej: G-A1B2C3D4E5)
      ============================================================ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T7FH9PQYV7"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS78CZ0KRG"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-T7FH9PQYV7');
+  gtag('config', 'G-LS78CZ0KRG');
 </script>
 <title>Sergio Mármol · Abogado Mercantil para Empresas y Autónomos | Madrid, Jaén y Almería</title>
 <meta name="description" content="Abogado mercantilista para pymes y autónomos. Holdings, reestructuraciones, pactos de socios, contratos mercantiles, empresa familiar, M&A y secretaría societaria. Hago crecer tu negocio y lo protejo. Madrid, Jaén y Almería.">
@@ -149,6 +146,15 @@
   ]
 }
 </script>
+<!-- Schema.org JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Sergio Mármol Abogado",
+  "url": "https://sergiomarmolabogado.es"
+}
+</script>
 <!-- Preconnect para Google Fonts (elimina render-blocking) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,7 +211,7 @@
     color: var(--beige); text-decoration: none;
   }
   .nav-logo span { font-weight: 300; font-size: 0.75em; letter-spacing: 0.3em; margin-left: 0.5em; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
   .nav-links a {
     color: var(--beige); text-decoration: none; font-size: 0.75rem;
     letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400;
@@ -217,6 +223,13 @@
   }
   .nav-links a:hover::after { width: 100%; }
   .nav-links a:hover { color: #fff; }
+  /* Blog: cuadrado con borde dorado que destaca */
+  .nav-links a.nav-blog {
+    border: 1px solid var(--gold); padding: 0.55em 1.1em;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-links a.nav-blog::after { display: none; }
+  .nav-links a.nav-blog:hover { background: var(--gold); color: var(--navy); }
 
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
   .hamburger span { width: 24px; height: 1.5px; background: var(--beige); transition: all 0.3s; }
@@ -374,8 +387,40 @@
   }
   .service-desc { font-size: 0.9rem; line-height: 1.8; opacity: 0.8; font-weight: 300; }
 
+  /* ===== BLOG PREVIEW ===== */
+  .blog-preview { background: var(--beige-light); }
+  .blog-preview-inner { max-width: 1200px; margin: 0 auto; }
+  .blog-preview-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin-top: 3rem;
+  }
+  .blog-preview-card {
+    background: #fff; border: 1px solid rgba(45,45,94,0.08);
+    padding: 2.5rem 2rem; transition: all 0.3s ease;
+    text-decoration: none; color: inherit; display: flex; flex-direction: column;
+    position: relative; overflow: hidden;
+  }
+  .blog-preview-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+  }
+  .blog-preview-card:hover::before { transform: scaleX(1); }
+  .blog-preview-card:hover { border-color: rgba(45,45,94,0.2); transform: translateY(-3px); }
+  .blog-card-cat { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
+  .blog-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--navy); line-height: 1.3; margin-bottom: 1rem; }
+  .blog-card-excerpt { font-size: 0.9rem; line-height: 1.8; color: #666; font-weight: 300; flex-grow: 1; }
+  .blog-card-more { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.5rem; }
+  .blog-preview-cta { text-align: center; margin-top: 3rem; }
+  .blog-preview-cta a {
+    display: inline-block; padding: 0.9em 2.5em; border: 1px solid var(--navy);
+    color: var(--navy); text-decoration: none; font-size: 0.75rem;
+    letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s;
+  }
+  .blog-preview-cta a:hover { background: var(--navy); color: var(--beige); }
+
   /* ===== APPROACH ===== */
-  .approach { background: var(--beige-light); }
+  .approach { background: var(--cream); }
   .approach-inner { max-width: 1200px; margin: 0 auto; }
   .approach-content {
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
@@ -398,7 +443,7 @@
   }
 
   /* ===== AREAS ===== */
-  .areas { background: var(--cream); }
+  .areas { background: var(--beige-light); }
   .areas-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
   .areas-grid {
     display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;
@@ -520,6 +565,11 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem; color: var(--gold);
   }
+  .form-privacy {
+    font-size: 0.7rem; color: rgba(232,224,212,0.5); font-weight: 300;
+    line-height: 1.6; margin-top: 1rem; text-align: center;
+  }
+  .form-privacy a { color: var(--gold); text-decoration: none; }
 
   .social-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
   .social-links a {
@@ -645,6 +695,7 @@
       background: var(--navy); padding: 2rem;
       gap: 1.5rem;
     }
+    .nav-links.open a.nav-blog { display: inline-block; align-self: flex-start; }
     .hamburger { display: flex; }
 
     section { padding: 4rem 2rem; }
@@ -652,6 +703,7 @@
     .about-visual { order: -1; text-align: center; padding-top: 0; }
     .about-visual img { max-width: 260px !important; }
     .services-grid { grid-template-columns: 1fr; }
+    .blog-preview-grid { grid-template-columns: 1fr; }
     .approach-content { grid-template-columns: 1fr; gap: 2rem; }
     .areas-grid { gap: 1rem; }
     .area-item { padding: 1.2rem 1.5rem; }
@@ -680,6 +732,7 @@
     <li><a href="#enfoque">Enfoque</a></li>
     <li><a href="#preguntas">FAQ</a></li>
     <li><a href="#contacto">Contacto</a></li>
+    <li><a href="/blog" class="nav-blog">Blog</a></li>
   </ul>
   <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0" onclick="document.getElementById('navLinks').classList.toggle('open')" onkeydown="if(event.key==='Enter')document.getElementById('navLinks').classList.toggle('open')">
     <span></span><span></span><span></span>
@@ -813,6 +866,31 @@
   </div>
 </section>
 
+<!-- BLOG PREVIEW -->
+<section class="blog-preview">
+  <div class="blog-preview-inner reveal">
+    <p class="section-label">Blog</p>
+    <h2 class="section-title">Artículos para<br>empresarios y autónomos</h2>
+    <div class="blog-preview-grid">
+      <a href="/blog/responsabilidad-administrador-sl" class="blog-preview-card">
+        <div class="blog-card-cat">Responsabilidad de Administradores</div>
+        <div class="blog-card-title">¿Responde el administrador de una SL con su patrimonio personal?</div>
+        <div class="blog-card-excerpt">¿Sabes cuándo el administrador de una SL responde con su patrimonio personal? Muchos no lo descubren hasta que llega la carta de Hacienda. Te explico cómo evitarlo.</div>
+        <span class="blog-card-more">Leer →</span>
+      </a>
+      <a href="/blog/problemas-socio-empresa" class="blog-preview-card">
+        <div class="blog-card-cat">Conflictos entre socios</div>
+        <div class="blog-card-title">Problemas con tu socio en una empresa: qué puedes hacer</div>
+        <div class="blog-card-excerpt">Tienes un conflicto con tu socio y no sabes qué hacer. Estas son las 5 opciones reales que tienes, desde negociar hasta disolver la sociedad.</div>
+        <span class="blog-card-more">Leer →</span>
+      </a>
+    </div>
+    <div class="blog-preview-cta">
+      <a href="/blog">Ver todos los artículos</a>
+    </div>
+  </div>
+</section>
+
 <!-- APPROACH -->
 <section id="enfoque" class="approach">
   <div class="approach-inner reveal">
@@ -919,21 +997,21 @@
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa (opcional)">
+            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa (opcional)" autocomplete="organization">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
           </div>
           <div class="form-group">
             <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
           </div>
         </div>
         <div class="form-group">
@@ -945,6 +1023,7 @@
           <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación..." required></textarea>
         </div>
         <button type="button" class="form-submit" onclick="enviarFormulario()">Enviar mensaje</button>
+        <p class="form-privacy">Al enviar este formulario aceptas la <a href="/politica-privacidad">Política de Privacidad</a>. Tus datos solo se usarán para responder a tu consulta.</p>
       </div>
       <div class="form-success" id="formSuccess">
         ✓ Mensaje enviado correctamente.<br>Te responderé lo antes posible.
@@ -995,15 +1074,15 @@
   <span>© 2026 Sergio Mármol — Abogado Mercantil y Societario</span>
   <span>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Abogado mercantilista en Madrid, Jaén y Almería</span>
   <div style="margin-top:1rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
-    <a href="/aviso-legal.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Aviso Legal</a>
-    <a href="/politica-privacidad.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Privacidad</a>
-    <a href="/politica-cookies.html" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Cookies</a>
+    <a href="/aviso-legal" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Aviso Legal</a>
+    <a href="/politica-privacidad" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Privacidad</a>
+    <a href="/politica-cookies" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Cookies</a>
   </div>
 </footer>
 
 <!-- COOKIE BANNER -->
 <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
-  <p style="color:var(--beige);font-size:0.85rem;font-weight:300;margin:0;max-width:600px;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies.html" style="color:var(--gold);">Más información</a></p>
+  <p style="color:var(--beige);font-size:0.85rem;font-weight:300;margin:0;max-width:600px;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" style="color:var(--gold);">Más información</a></p>
   <div style="display:flex;gap:0.8rem;">
     <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:var(--gold);color:var(--navy);border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
     <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:var(--beige);border:1px solid rgba(232,224,212,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
@@ -1030,8 +1109,6 @@
   });
 
   // Form submission via Formspree
-  // IMPORTANTE: Sergio debe crear cuenta gratis en formspree.io y reemplazar
-  // 'TU_ID_FORMSPREE' por su ID real (ej: 'xpzvqkdl')
   function enviarFormulario() {
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -1066,7 +1143,6 @@
         document.getElementById('contactForm').style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
-        // Fallback: abrir email con los datos
         const mailtoBody = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
         window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${mailtoBody}`;
       }
@@ -1080,14 +1156,12 @@
   function acceptCookies() {
     document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
-    // GA4 already loaded in head — cookies now permitted
   }
 
   function rejectCookies() {
     document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
-    // Disable GA4
-    window['ga-disable-G-T7FH9PQYV7'] = true;
+    window['ga-disable-G-LS78CZ0KRG'] = true;
   }
 
   // Show banner if no consent yet
@@ -1095,7 +1169,7 @@
     if (!document.cookie.includes('cookie_consent=')) {
       document.getElementById('cookieBanner').style.display = 'flex';
     } else if (document.cookie.includes('cookie_consent=rejected')) {
-      window['ga-disable-G-T7FH9PQYV7'] = true;
+      window['ga-disable-G-LS78CZ0KRG'] = true;
     }
   })();
 
@@ -1119,7 +1193,6 @@
     goToSlide(next);
   }
 
-  // Auto-rotate every 6 seconds
   setInterval(() => changeSlide(1), 6000);
 </script>
 
