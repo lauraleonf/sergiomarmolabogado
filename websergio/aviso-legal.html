@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,6 +41,20 @@
   .legal-footer a { color: rgba(232,224,212,0.7); text-decoration: none; margin: 0 1rem; }
   .legal-footer a:hover { color: var(--gold); }
 </style>
+<!-- Google Analytics 4 (condicional al consentimiento) -->
+<script>
+  // Deshabilitar GA4 si el usuario rechazó cookies
+  if (document.cookie.includes('cookie_consent=rejected')) {
+    window['ga-disable-G-LS78CZ0KRG'] = true;
+  }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS78CZ0KRG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LS78CZ0KRG');
+</script>
 </head>
 <body>
 
@@ -81,5 +96,32 @@
   <p style="margin-top:1rem;">© 2026 Sergio Mármol Méndez · Abogado</p>
 </footer>
 
+<!-- Cookie Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2d2d5e;padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+  <p style="color:#e8e0d4;font-size:0.85rem;font-weight:300;margin:0;max-width:600px;font-family:Raleway,sans-serif;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" style="color:#b8976a;">Más información</a></p>
+  <div style="display:flex;gap:0.8rem;">
+    <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:#b8976a;color:#2d2d5e;border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
+    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:#e8e0d4;border:1px solid rgba(232,224,212,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
+    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(232,224,212,0.5);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
+  </div>
+</div>
+<script>
+  function acceptCookies() {
+    document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
+    document.getElementById('cookieBanner').style.display = 'none';
+  }
+  function rejectCookies() {
+    document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
+    document.getElementById('cookieBanner').style.display = 'none';
+    window['ga-disable-G-LS78CZ0KRG'] = true;
+  }
+  (function() {
+    if (!document.cookie.includes('cookie_consent=')) {
+      document.getElementById('cookieBanner').style.display = 'flex';
+    } else if (document.cookie.includes('cookie_consent=rejected')) {
+      window['ga-disable-G-LS78CZ0KRG'] = true;
+    }
+  })();
+</script>
 </body>
 </html>
