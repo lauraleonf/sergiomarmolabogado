@@ -385,13 +385,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .related-card {
-    padding: 1.2rem 1.5rem;
-    border: 1px solid rgba(45,45,94,0.1);
+    padding: 1.4rem 1.8rem;
+    background: var(--navy);
+    border: 2px solid var(--navy);
     text-decoration: none;
-    transition: border-color 0.3s;
     display: block;
+    transition: border-color 0.3s;
   }
-  .related-card:hover { border-color: var(--gold); }
+  .related-card:hover { border-color: var(--gold); background: var(--navy-dark); }
   .related-card-cat {
     font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--gold); margin-bottom: 0.4rem;
@@ -647,11 +648,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- OTROS ARTÍCULOS — retención del lector post-CTA -->
   <div class="related-articles">
-    <p class="related-label">Otro artículo que puede interesarte</p>
-    <div class="related-grid" style="grid-template-columns:1fr;">
+    <p class="related-label">Otros artículos que pueden interesarte</p>
+    <div class="related-grid">
       <a href="/blog/problemas-socio-empresa" class="related-card">
         <div class="related-card-cat">Conflictos societarios</div>
-        <div class="related-card-title">Problemas con tu socio en una empresa: qué puedes hacer</div>
+        <div class="related-card-title">Cuando los socios no se llevan bien: cómo resolver el conflicto en tu empresa</div>
+      </a>
+      <a href="/blog/clausulas-contrato-mercantil" class="related-card">
+        <div class="related-card-cat">Contratos Mercantiles</div>
+        <div class="related-card-title">¿Qué cláusulas de un contrato mercantil debes revisar antes de firmar?</div>
       </a>
     </div>
   </div>
