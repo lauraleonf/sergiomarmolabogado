@@ -236,6 +236,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 0.92rem; line-height: 1.75;
     color: rgba(232,224,212,0.9); margin-bottom: 0; font-weight: 300;
   }
+  .law-box a { color: var(--gold); }
+
+  /* RESPUESTA DIRECTA bajo H2 — GEO */
+  .answer-direct {
+    font-size: 0.97rem; line-height: 1.85; color: var(--navy);
+    font-weight: 400; margin-bottom: 1.2rem;
+    padding: 0.9rem 1.2rem;
+    background: var(--beige-light);
+    border-left: 3px solid var(--gold);
+  }
+
+  /* RESUMEN / TL;DR */
+  .summary-box {
+    background: var(--navy); color: var(--beige);
+    padding: 1.6rem 1.8rem; margin-bottom: 2.5rem;
+    border-left: 3px solid var(--gold);
+  }
+  .summary-box .summary-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 0.8rem;
+  }
+  .summary-box ul { margin: 0; padding-left: 1.1rem; }
+  .summary-box li { font-size: 0.92rem; line-height: 1.75; font-weight: 300; color: rgba(232,224,212,0.92); margin-bottom: 0.4rem; }
+  .summary-box li:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--beige); font-weight: 600; }
+
+  /* TABLA COMPARATIVA */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.87rem; }
+  .compare-table th { background: var(--navy); color: var(--beige); padding: 0.8rem 1rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(45,45,94,0.1); color: #3a3a5c; font-weight: 300; vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: var(--beige-light); }
+  .compare-table td:first-child, .compare-table th:first-child { font-weight: 500; color: var(--navy); }
+  @media (max-width: 600px) {
+    .compare-table { font-size: 0.8rem; }
+    .compare-table th, .compare-table td { padding: 0.6rem 0.6rem; }
+  }
 
   /* CAJA MORATORIA — tratamiento visual diferenciado */
   .moratoria-box {
@@ -494,13 +530,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Ser administrador de una SL no es solo un cargo en el Registro Mercantil. En determinadas circunstancias, puede comprometer tu casa, tus ahorros y todo tu patrimonio personal. Aquí te explico cuándo ocurre y cómo evitarlo.
   </p>
 
+  <div class="summary-box">
+    <div class="summary-label">En resumen</div>
+    <ul>
+      <li><strong>Regla general:</strong> la SL protege tu patrimonio personal — pero tiene excepciones.</li>
+      <li><strong>Tres vías de responsabilidad:</strong> no disolver a tiempo (art. 367 LSC), derivación de Hacienda/Seguridad Social (arts. 42-43 LGT), y falta de diligencia con dolo o culpa (art. 236 LSC).</li>
+      <li><strong>Plazo clave:</strong> 2 meses desde que existe causa de disolución para convocar junta.</li>
+      <li><strong>Moratoria 2026:</strong> las pérdidas de 2020-2021 no cuentan para la causa de disolución por pérdidas, pero no es un salvoconducto general.</li>
+    </ul>
+  </div>
+
   <article class="article-body">
 
     <h2>Lo primero: la regla general</h2>
+    <p class="answer-direct">Sí, la SL protege tu patrimonio personal frente a las deudas de la empresa — es una persona jurídica independiente. Pero ese escudo tiene tres excepciones concretas que conviene conocer antes de que aparezcan.</p>
     <p>Una sociedad limitada es una persona jurídica independiente. Sus deudas las paga la empresa con su propio patrimonio — el administrador y los socios no responden con lo suyo. Este escudo de responsabilidad limitada es la gran ventaja de operar a través de una SL frente a trabajar como autónomo.</p>
     <p>Pero ese escudo tiene excepciones. Y son excepciones que muchos administradores desconocen hasta que les llega una derivación de responsabilidad de Hacienda o una demanda de un acreedor.</p>
 
     <h2>Los tres supuestos principales en los que sí respondes</h2>
+    <p class="answer-direct">Los tres supuestos son: no convocar junta ante una causa de disolución (art. 367 LSC), derivación de responsabilidad por Hacienda o Seguridad Social (arts. 42-43 LGT), y falta de diligencia en la gestión con dolo o culpa (art. 236 LSC).</p>
 
     <div class="options-list">
       <div class="option-item">
@@ -531,6 +579,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="law-box">
       <div class="law-ref">Art. 367 · Ley de Sociedades de Capital</div>
       <p>Los administradores que incumplan la obligación de convocar la junta general para acordar la disolución de la sociedad cuando concurra causa legal para ello responderán solidariamente —con su patrimonio personal— de todas las obligaciones sociales contraídas con posterioridad a la causa de disolución.</p>
+      <p style="margin-top:0.9rem;"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2010-10544" target="_blank" rel="noopener">Consultar el texto consolidado en el BOE →</a></p>
     </div>
 
     <!-- MORATORIA: con tratamiento visual propio -->
@@ -542,7 +591,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p><strong>Importante:</strong> si incluso sin contar las pérdidas de 2020 y 2021, el patrimonio neto de tu empresa ya está por debajo de la mitad del capital social por pérdidas de otros años, la causa de disolución sí existe y el plazo de dos meses corre con normalidad. La moratoria no es un salvoconducto general — conviene revisar la situación concreta con un abogado o con tu asesor contable.</p>
     </div>
 
+    <table class="compare-table">
+      <tr>
+        <th>Vía de responsabilidad</th>
+        <th>Base legal</th>
+        <th>Qué exige</th>
+      </tr>
+      <tr>
+        <td>No disolver a tiempo</td>
+        <td>Art. 367 LSC</td>
+        <td>No convocar junta en 2 meses ante causa de disolución</td>
+      </tr>
+      <tr>
+        <td>Derivación de Hacienda / Seguridad Social</td>
+        <td>Arts. 42-43 LGT</td>
+        <td>No adoptar medidas para evitar el impago, o participación activa en la infracción</td>
+      </tr>
+      <tr>
+        <td>Falta de diligencia en la gestión</td>
+        <td>Art. 236 LSC</td>
+        <td>Dolo o culpa, daño acreditado y relación de causalidad</td>
+      </tr>
+    </table>
+
+
     <h2>Cómo protegerte como administrador</h2>
+    <p class="answer-direct">Las medidas clave son: contabilidad al día, depósito de cuentas en plazo, actuar dentro de los dos meses ante causa de disolución, documentar las decisiones del órgano de administración y valorar un seguro D&O.</p>
     <p>Todos estos riesgos son en gran medida prevenibles con una gestión ordenada y asesoramiento adecuado. Las medidas no son complicadas — lo que hace daño es no aplicarlas a tiempo.</p>
 
     <div class="options-list">

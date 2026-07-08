@@ -278,6 +278,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .callout p { margin-bottom: 0; font-size: 0.93rem; color: #3a3a5c; }
 
+  /* RESUMEN / TL;DR */
+  .summary-box {
+    background: var(--navy); color: var(--beige);
+    padding: 1.6rem 1.8rem; margin-bottom: 2.5rem;
+    border-left: 3px solid var(--gold);
+  }
+  .summary-box .summary-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 0.8rem;
+  }
+  .summary-box ul { margin: 0; padding-left: 1.1rem; }
+  .summary-box li { font-size: 0.92rem; line-height: 1.75; font-weight: 300; color: rgba(232,224,212,0.92); margin-bottom: 0.4rem; }
+  .summary-box li:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--beige); font-weight: 600; }
+
+  /* TABLA COMPARATIVA */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.87rem; }
+  .compare-table th { background: var(--navy); color: var(--beige); padding: 0.8rem 1rem; text-align: left; font-weight: 500; }
+  .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid rgba(45,45,94,0.1); color: #3a3a5c; font-weight: 300; vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: var(--beige-light); }
+  .compare-table td:first-child, .compare-table th:first-child { font-weight: 500; color: var(--navy); }
+  @media (max-width: 600px) {
+    .compare-table { font-size: 0.8rem; }
+    .compare-table th, .compare-table td { padding: 0.6rem 0.6rem; }
+  }
+
   /* OPCIONES NUMERADAS */
   .options-list { margin: 2rem 0; display: flex; flex-direction: column; gap: 0; }
   .option-item {
@@ -509,6 +535,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Muchos autónomos llevan años preguntándose si deberían constituir una SL. La respuesta depende de tu situación concreta — pero hay señales claras que indican que ha llegado el momento. Aquí te las explico, junto con lo que cambia de verdad y los errores que más veo al hacer la transición.
   </p>
 
+  <div class="summary-box">
+    <div class="summary-label">En resumen</div>
+    <ul>
+      <li><strong>4 señales para dar el salto:</strong> beneficio sostenido &gt; 40.000-50.000€/año, riesgo patrimonial, entrada de socios/inversores, o clientes que exigen forma societaria.</li>
+      <li><strong>Diferencia fiscal clave:</strong> IRPF (hasta 47%) vs Impuesto de Sociedades (25%, 15% los 2 primeros años) — pero el ahorro depende de cuánto reinviertas.</li>
+      <li><strong>Capital mínimo:</strong> 3.000€ (Ley Crea y Crece), más notaría y Registro Mercantil.</li>
+      <li><strong>Error más grave:</strong> constituir la SL sin análisis fiscal previo o sin pacto de socios si hay varios socios.</li>
+    </ul>
+  </div>
+
   <article class="article-body">
 
     <h2>¿Tiene sentido plantearse el cambio de autónomo a SL?</h2>
@@ -555,9 +591,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="law-box">
       <div class="law-ref">Impuesto de Sociedades · Tipos aplicables 2026</div>
       <p>Tipo general: <strong style="color:var(--gold);">25%</strong> · Empresas de nueva creación (primeros 2 años con base positiva): <strong style="color:var(--gold);">15%</strong> · IRPF autónomo: desde el 19% hasta el 47% en función de la base imponible (tramos generales de la escala estatal, sin contar el tramo autonómico, que varía por comunidad).</p>
+      <p style="margin-top:0.9rem;"><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328" target="_blank" rel="noopener" style="color:var(--gold);">Consultar la Ley del Impuesto sobre Sociedades en el BOE →</a></p>
     </div>
 
     <p>La diferencia más relevante es esta: si la empresa genera 80.000 euros de beneficio y tú solo necesitas 40.000 para vivir, como autónomo tributas por los 80.000 en IRPF. Con la SL, la empresa tributa al 25% por los 80.000, y tú solo tributas en IRPF por los 40.000 que te extraes como salario o dividendo. Los otros 40.000 quedan en la sociedad, tributados al 25%, para reinvertir.</p>
+
+    <table class="compare-table">
+      <tr>
+        <th>Aspecto</th>
+        <th>Autónomo</th>
+        <th>Sociedad Limitada</th>
+      </tr>
+      <tr>
+        <td>Tributación</td>
+        <td>IRPF, hasta 47%</td>
+        <td>Impuesto de Sociedades, 25% (15% los 2 primeros años)</td>
+      </tr>
+      <tr>
+        <td>Responsabilidad patrimonial</td>
+        <td>Ilimitada — responde con todo su patrimonio</td>
+        <td>Limitada al capital social, con matices</td>
+      </tr>
+      <tr>
+        <td>Coste de constitución</td>
+        <td>Ninguno (alta en Hacienda y RETA)</td>
+        <td>Desde ~3.400-3.700€ (capital + notaría + registro)</td>
+      </tr>
+      <tr>
+        <td>Gestión y contabilidad</td>
+        <td>Más simple</td>
+        <td>Más compleja — contabilidad mercantil, depósito de cuentas</td>
+      </tr>
+      <tr>
+        <td>Incorporar socios o inversores</td>
+        <td>No es posible</td>
+        <td>Sí, mediante participaciones</td>
+      </tr>
+      <tr>
+        <td>Imagen frente a grandes clientes</td>
+        <td>Puede generar fricciones</td>
+        <td>Facilita el acceso a licitaciones y grandes cuentas</td>
+      </tr>
+    </table>
 
     <div class="callout">
       <p><strong>Una advertencia importante:</strong> este análisis fiscal requiere números reales, no estimaciones genéricas. La diferencia entre autónomo y SL en tu caso concreto depende de tu nivel de beneficios, tu comunidad autónoma, si tienes otros ingresos, y cuánto necesitas extraer para vivir. Hacer los cálculos con un asesor antes de decidir es imprescindible.</p>
