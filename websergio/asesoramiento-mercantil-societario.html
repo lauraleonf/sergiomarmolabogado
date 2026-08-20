@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<!-- Google Tag Manager (carga condicionada al consentimiento de cookies) -->
+<script>(function(w,d,s,l,i){
+  w[l]=w[l]||[];
+  function gtmLoad(){
+    if(w.__gtmLoaded) return;
+    w.__gtmLoaded = true;
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  }
+  w.__loadGTM = gtmLoad;
+  var m = d.cookie.match(/(?:^|;\s*)cookie_consent=([^;]+)/);
+  if (m && m[1] === 'accepted') { gtmLoad(); }
 })(window,document,'script','dataLayer','GTM-PBZTWL8T');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
@@ -23,6 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sergiomarmolabogado.es/asesoramiento-mercantil-societario">
 <meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://sergiomarmolabogado.es/sergiomarmolabogado.png">
 
 <!-- Schema: Service -->
 <script type="application/ld+json">
@@ -331,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="stage-desc">Redacto y negocio pactos de socios, cláusulas de arrastre y acompañamiento, derechos de adquisición preferente y reglas claras de convivencia entre socios.</p>
           <ul class="service-list">
             <li><h4 class="service-name">Pactos de socios y gobierno corporativo</h4> — cláusulas de arrastre y acompañamiento, derechos de adquisición preferente, reglas de convivencia. <a href="/pactos-de-socios">Leer más →</a></li>
-            <li><h4 class="service-name">Secretaría societaria</h4> — actas de juntas, libros de socios, inscripciones en el Registro Mercantil, ampliaciones de capital.</li>
+            <li><h4 class="service-name">Secretaría societaria</h4> — actas de juntas, libros de socios, inscripciones en el Registro Mercantil, ampliaciones de capital. <a href="/blog/pacto-de-socios">Leer más sobre pactos de socios →</a></li>
           </ul>
         </div>
 
@@ -340,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="stage-desc">Diseño grupos de sociedades para optimizar la gestión, proteger el patrimonio y mejorar la eficiencia fiscal y operativa de tu negocio.</p>
           <ul class="service-list">
             <li><h4 class="service-name">Holdings y estructuración societaria</h4> — grupos de sociedades para optimizar la gestión y proteger el patrimonio. <a href="/holdings-estructuracion-societaria">Leer más →</a></li>
-            <li><h4 class="service-name">Sucesión y continuidad del negocio</h4> — planificación del relevo generacional y estructuración de la sucesión.</li>
+            <li><h4 class="service-name">Sucesión y continuidad del negocio</h4> — planificación del relevo generacional y estructuración de la sucesión. <a href="/blog/holdings-estructuracion-societaria">Leer más sobre holdings y sucesión empresarial →</a></li>
           </ul>
         </div>
 
@@ -357,8 +367,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="stage-title">M&amp;A y <em>venta</em> de tu empresa</h3>
           <p class="stage-desc">Fusiones, escisiones, transformaciones societarias, due diligence y compraventa de participaciones o activos — acompañándote en cada fase de la operación.</p>
           <ul class="service-list">
-            <li><h4 class="service-name">M&amp;A y compraventa de empresas</h4> — due diligence y compraventa de participaciones o activos.</li>
-            <li><h4 class="service-name">Reestructuraciones societarias</h4> — fusiones, escisiones y transformaciones (SL a SA y viceversa).</li>
+            <li><h4 class="service-name">M&amp;A y compraventa de empresas</h4> — due diligence y compraventa de participaciones o activos. <a href="/blog/problemas-socio-empresa">Leer más sobre compraventa de participaciones →</a></li>
+            <li><h4 class="service-name">Reestructuraciones societarias</h4> — fusiones, escisiones y transformaciones (SL a SA y viceversa). <a href="/blog/holdings-estructuracion-societaria">Leer más sobre estructuración societaria →</a></li>
           </ul>
         </div>
       </div>
@@ -475,6 +485,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function acceptCookies() {
     document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
+    if (window.__loadGTM) window.__loadGTM();
   }
   function rejectCookies() {
     document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";

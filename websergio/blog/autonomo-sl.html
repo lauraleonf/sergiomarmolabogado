@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<!-- Google Tag Manager (carga condicionada al consentimiento de cookies) -->
+<script>(function(w,d,s,l,i){
+  w[l]=w[l]||[];
+  function gtmLoad(){
+    if(w.__gtmLoaded) return;
+    w.__gtmLoaded = true;
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  }
+  w.__loadGTM = gtmLoad;
+  var m = d.cookie.match(/(?:^|;\s*)cookie_consent=([^;]+)/);
+  if (m && m[1] === 'accepted') { gtmLoad(); }
 })(window,document,'script','dataLayer','GTM-PBZTWL8T');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
@@ -24,7 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sergiomarmolabogado.es/blog/autonomo-sl">
 <meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://sergiomarmolabogado.es/blog/sergiomarmolabogado.png">
+<meta property="og:image" content="https://sergiomarmolabogado.es/sergiomarmolabogado.png">
 <meta property="article:author" content="Sergio Mármol Méndez">
 <meta property="article:published_time" content="2026-06-15">
 
@@ -40,14 +49,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "name": "Sergio Mármol Méndez",
     "jobTitle": "Abogado Mercantil y Societario",
     "url": "https://sergiomarmolabogado.es",
-    "image": "https://sergiomarmolabogado.es/blog/sergiomarmolabogado.png",
+    "image": "https://sergiomarmolabogado.es/sergiomarmolabogado.png",
     "sameAs": "https://www.linkedin.com/in/sergiomarmolmendez/"
   },
   "publisher": {
     "@type": "Person",
     "name": "Sergio Mármol Méndez",
     "url": "https://sergiomarmolabogado.es",
-    "image": "https://sergiomarmolabogado.es/blog/sergiomarmolabogado.png"
+    "image": "https://sergiomarmolabogado.es/sergiomarmolabogado.png"
   },
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
@@ -607,6 +616,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function acceptCookies() {
     document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
+    if (window.__loadGTM) window.__loadGTM();
   }
   function rejectCookies() {
     document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
