@@ -160,527 +160,276 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap"></noscript>
 <style>
-  :root {
-    --navy: #2d2d5e;
-    --navy-dark: #1e1e45;
-    --navy-light: #3d3d7a;
-    --beige: #e8e0d4;
-    --beige-light: #f2ede7;
-    --beige-dark: #d4cabb;
-    --cream: #f7f4f0;
-    --text-dark: #2d2d5e;
-    --text-light: #e8e0d4;
-    --gold: #b8a88a;
+  :root{
+    --navy:#2d2d5e;
+    --navy-dark:#1e1e45;
+    --paper:#faf7f2;      /* fondo cálido tipo Cosmos, en vez de cream plano */
+    --paper-alt:#f2ede4;
+    --ink:#26263f;         /* texto principal, no negro puro */
+    --ink-soft:#5a5a72;
+    --gold:#b8a377;        /* dorado ligeramente más cálido/menos plateado */
+    --gold-deep:#8f7c52;
+    --line:rgba(45,45,94,0.08);
   }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Raleway',sans-serif;background:var(--paper);color:var(--ink);font-size:16px;overflow-x:hidden;}
+  ::selection{background:var(--gold);color:var(--navy);}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  /* Skip to content for screen readers */
-  .skip-link {
-    position: absolute; top: -40px; left: 0; padding: 8px 16px;
-    background: var(--gold); color: var(--navy); z-index: 1000;
-    font-size: 0.85rem;
-  }
-  .skip-link:focus { top: 0; }
-
-  body {
-    font-family: 'Raleway', sans-serif;
-    color: var(--text-dark);
-    background: var(--cream);
-    overflow-x: hidden;
-    font-size: 16px;
-  }
+  .mockup-tag{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy-dark);color:var(--paper);
+    text-align:center;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.5rem;font-family:'Raleway',sans-serif;}
 
   /* ===== NAV ===== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 4rem;
-    background: rgba(45,45,94,0.97);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-  }
-  nav.scrolled { padding: 0.8rem 4rem; box-shadow: 0 2px 30px rgba(0,0,0,0.15); }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 400; letter-spacing: 0.15em;
-    color: var(--beige); text-decoration: none;
-  }
-  .nav-logo span { font-weight: 300; font-size: 0.75em; letter-spacing: 0.3em; margin-left: 0.5em; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-  .nav-links a {
-    color: var(--beige); text-decoration: none; font-size: 0.75rem;
-    letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400;
-    position: relative; transition: color 0.3s;
-  }
-  .nav-links a::after {
-    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
-    background: var(--gold); transition: width 0.3s;
-  }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-links a:hover { color: #fff; }
-  /* Blog: cuadrado con borde dorado que destaca */
-  .nav-links a.nav-blog {
-    border: 1px solid var(--gold); padding: 0.55em 1.1em;
-    transition: background 0.3s, color 0.3s;
-  }
-  .nav-links a.nav-blog::after { display: none; }
-  .nav-links a.nav-blog:hover { background: var(--gold); color: var(--navy); }
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
+    padding:1.4rem 4rem;background:rgba(250,247,242,0.85);backdrop-filter:blur(14px);transition:all .4s ease;
+    border-bottom:1px solid transparent;}
+  nav.scrolled{padding:1rem 4rem;border-bottom:1px solid var(--line);}
+  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;letter-spacing:0.12em;color:var(--navy);text-decoration:none;text-transform:uppercase;}
+  .nav-logo span{font-weight:700;font-size:0.66em;letter-spacing:0.12em;margin-left:0.6em;padding-left:0.6em;
+    border-left:1px solid rgba(45,45,94,0.25);color:var(--navy);opacity:0.9;text-transform:uppercase;}
+  .nav-links{display:flex;gap:2.6rem;list-style:none;align-items:center;}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-size:0.78rem;letter-spacing:0.06em;font-weight:500;transition:color .25s;}
+  .nav-links a:hover{color:var(--navy);}
+  .nav-cta{color:var(--paper) !important;background:var(--navy);padding:0.65em 1.4em;border-radius:2px;}
+  .nav-cta:hover{background:var(--gold-deep) !important;color:var(--paper) !important;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+  .hamburger span{width:22px;height:1.5px;background:var(--navy);transition:all .3s;}
 
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
-  .hamburger span { width: 24px; height: 1.5px; background: var(--beige); transition: all 0.3s; }
+  section{padding:8rem 4rem;}
+  .label{font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:1.6rem;display:block;}
 
   /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--navy);
-    position: relative; overflow: hidden;
-    padding: 8rem 2rem 2rem;
-  }
-  .hero::before {
-    content: 'SM';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(20rem, 40vw, 45rem); font-weight: 300;
-    color: rgba(255,255,255,0.03);
-    position: absolute; right: -5%; top: 50%; transform: translateY(-50%);
-    line-height: 0.85; pointer-events: none;
-  }
-  .hero-content {
-    text-align: center; position: relative; z-index: 2;
-    max-width: 800px;
-    animation: fadeUp 1.2s ease both;
-  }
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 300;
-    color: var(--beige); line-height: 1.1;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.3em;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold); font-weight: 400;
-    margin-bottom: 1.5em;
-  }
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 300;
-    color: rgba(232,224,212,0.85); line-height: 1.7;
-    max-width: 600px; margin: 0 auto 2.5em;
-  }
-  .hero-cta {
-    display: inline-block; padding: 1em 3em;
-    border: 1px solid var(--gold); color: var(--beige);
-    text-decoration: none; font-size: 0.75rem;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    transition: all 0.4s ease;
-    margin-bottom: 4rem;
-  }
-  .hero-cta:hover { background: var(--gold); color: var(--navy); }
+  .hero{min-height:100vh;background:var(--navy);color:var(--paper);display:flex;align-items:center;padding:10rem 4rem 6rem;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 15%, rgba(184,163,119,0.16), transparent 55%);pointer-events:none;}
+  .hero-grid{max-width:1280px;margin:0 auto;width:100%;position:relative;z-index:2;}
+  .hero-eyebrow{font-size:0.78rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;font-weight:600;}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,6vw,5.4rem);line-height:1.12;letter-spacing:-0.01em;max-width:19ch;}
+  .hero h1 em{font-style:italic;color:var(--gold);font-weight:400;}
+  .hero-sub{font-size:1.05rem;font-weight:300;line-height:1.75;color:rgba(250,247,242,0.78);max-width:520px;margin:2.2rem 0 3rem;}
+  .btn-primary{display:inline-block;background:var(--gold);color:var(--navy-dark);padding:1.05em 2.6em;text-decoration:none;
+    font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;border-radius:2px;transition:all .3s ease;}
+  .btn-primary:hover{background:#cdb98a;transform:translateY(-2px);}
+  .hero-meta{display:flex;gap:3rem;margin-top:5rem;flex-wrap:wrap;}
+  .hero-meta div{border-left:1px solid rgba(250,247,242,0.2);padding-left:1.2rem;}
+  .hero-meta .n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--paper);}
+  .hero-meta .l{font-size:0.7rem;letter-spacing:0.08em;color:rgba(250,247,242,0.55);margin-top:0.2rem;max-width:22ch;}
 
-  .scroll-indicator {
-    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: rgba(232,224,212,0.55); font-size: 0.6rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: bounce 2s infinite;
-  }
-  .scroll-indicator::after {
-    content: ''; width: 1px; height: 40px;
-    background: linear-gradient(to bottom, rgba(232,224,212,0.3), transparent);
-  }
+  /* ===== ABOUT (asimétrico, aireado) ===== */
+  .about{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:6rem;align-items:center;}
+  .about-visual{position:relative;}
+  .about-visual img{width:100%;max-width:420px;filter:grayscale(20%) contrast(1.02);}
+  .about-visual::before{content:'';position:absolute;top:-2rem;left:-2rem;width:100%;max-width:420px;height:100%;border:1px solid var(--gold);z-index:-1;}
+  h2.big{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1.12;color:var(--navy);margin-bottom:2rem;}
+  h2.big em{font-style:italic;color:var(--gold-deep);}
+  .about-text p{font-size:1.05rem;line-height:1.85;color:var(--ink-soft);font-weight:300;max-width:60ch;margin-bottom:1.4rem;}
+  .about-stats{display:flex;gap:3rem;margin-top:2.2rem;}
+  .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--navy);line-height:1;}
+  .stat-l{font-size:0.76rem;color:var(--ink-soft);margin-top:0.5rem;max-width:18ch;line-height:1.45;}
 
-  /* ===== SECTIONS ===== */
-  section { padding: 6rem 4rem; }
+  .edu-block{max-width:1280px;margin:5rem auto 0;}
+  .edu-label{font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:1.6rem;text-align:center;}
+  .edu-grid{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
+  .edu-item{border:1px solid var(--line);border-radius:4px;padding:1.1rem 1.4rem;text-align:center;width:calc(20% - 0.8rem);min-width:170px;}
+  .edu-school{font-family:'Cormorant Garamond',serif;font-size:0.98rem;font-weight:600;color:var(--navy);margin-bottom:0.25rem;}
+  .edu-degree{font-size:0.76rem;color:var(--ink-soft);line-height:1.4;}
 
-  .section-label {
-    font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--gold); font-weight: 500; margin-bottom: 1.5rem;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300;
-    color: var(--navy); line-height: 1.2; margin-bottom: 1.5rem;
-  }
+  /* ===== JOURNEY / SERVICIOS — pieza distintiva ===== */
+  .journey{background:var(--paper-alt);color:var(--navy);}
+  .journey-inner{max-width:1280px;margin:0 auto;}
+  .journey-head{max-width:640px;margin-bottom:4rem;}
+  .journey-head h2{color:var(--navy);}
+  .journey-head p{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink-soft);margin-top:1rem;}
 
-  /* ===== ABOUT ===== */
-  .about {
-    background: var(--cream);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    max-width: 1200px; margin: 0 auto;
-    align-items: start;
-  }
-  .about-text p {
-    font-size: 1rem; line-height: 1.9; color: #444;
-    margin-bottom: 1.5rem; font-weight: 300;
-  }
-  .about-stats {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    margin-top: 2rem;
-  }
-  .stat {
-    padding: 1.5rem; border-left: 2px solid var(--gold);
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--navy);
-    line-height: 1;
-  }
-  .stat-label { font-size: 0.8rem; letter-spacing: 0.05em; color: #666; margin-top: 0.5rem; }
+  .journey-layout{display:grid;grid-template-columns:250px 1fr;gap:5rem;}
+  .stage-nav{position:sticky;top:6rem;align-self:start;display:flex;flex-direction:column;gap:0.2rem;height:fit-content;}
+  .stage-btn{background:none;border:none;border-left:2px solid transparent;color:rgba(45,45,94,0.28);font-family:'Raleway',sans-serif;
+    font-weight:500;padding:0.75rem 0 0.75rem 1.1rem;font-size:0.92rem;letter-spacing:0.01em;cursor:pointer;
+    transition:all .25s ease;text-align:left;white-space:nowrap;}
+  .stage-btn .num{font-family:'Cormorant Garamond',serif;font-size:1rem;margin-right:0.5em;color:var(--gold-deep);opacity:0.6;}
+  .stage-btn.active{color:var(--navy);font-weight:700;border-left-color:var(--gold-deep);}
+  .stage-btn.active .num{opacity:1;}
+  .stage-btn:hover{color:rgba(45,45,94,0.65);}
 
-  .about-visual {
-    display: flex; align-items: flex-start; justify-content: center;
-    position: relative;
-  }
-  .about-visual img {
-    width: 100%; max-width: 380px; border-radius: 2px; filter: grayscale(15%);
-  }
-  .monogram-display {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14rem; font-weight: 300; color: var(--navy);
-    opacity: 0.08; line-height: 0.85;
-    position: relative;
-  }
-  .about-visual .accent-box {
-    position: absolute; width: 200px; height: 200px;
-    border: 1px solid var(--gold); opacity: 0.3;
-    top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(15deg);
-  }
+  .stage-panels{display:flex;flex-direction:column;gap:2.2rem;}
+  .stage-panel{background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:3rem 3.2rem;scroll-margin-top:6rem;max-width:720px;}
+  .stage-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,2.8vw,2.3rem);line-height:1.2;margin-bottom:1rem;color:var(--navy);}
+  .stage-title em{font-style:italic;color:var(--gold-deep);}
+  .stage-desc{font-size:0.98rem;font-weight:300;line-height:1.75;color:var(--ink-soft);margin-bottom:1.8rem;max-width:52ch;}
 
-  /* ===== SERVICES ===== */
-  .services { background: var(--navy); color: var(--beige); }
-  .services .section-title { color: var(--beige); }
-  .services-inner { max-width: 1200px; margin: 0 auto; }
-  .services-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-    margin-top: 3rem;
-  }
-  .service-card {
-    padding: 2.5rem 2rem;
-    border: 1px solid rgba(232,224,212,0.1);
-    transition: all 0.4s ease;
-    position: relative; overflow: hidden;
-  }
-  .service-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-  .service-card:hover::before { transform: scaleX(1); }
-  .service-card:hover { border-color: rgba(232,224,212,0.25); background: rgba(255,255,255,0.03); }
-  .service-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem; font-weight: 300; color: var(--gold); opacity: 0.5;
-    margin-bottom: 1rem;
-  }
-  .service-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem;
-  }
-  .service-desc { font-size: 0.9rem; line-height: 1.8; opacity: 0.8; font-weight: 300; }
+  .service-list{list-style:none;display:flex;flex-direction:column;}
+  .service-list li{font-size:0.9rem;line-height:1.75;color:var(--ink-soft);font-weight:300;
+    padding:1.1rem 0;border-top:1px solid var(--line);}
+  .service-list li:first-child{border-top:none;padding-top:0;}
+  .service-name{color:var(--navy);font-weight:600;font-size:inherit;font-family:inherit;display:inline;}
+  .service-list a{color:var(--gold-deep);text-decoration:none;font-size:0.82rem;white-space:nowrap;margin-left:0.3rem;}
+  .service-list a:hover{text-decoration:underline;}
 
-  /* ===== APPROACH ===== */
-  .approach { background: var(--cream); }
-  .approach-inner { max-width: 1200px; margin: 0 auto; }
-  .approach-content {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    margin-top: 3rem; align-items: start;
-  }
-  .approach-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 300; line-height: 1.7;
-    color: var(--navy);
-  }
-  .approach-list { list-style: none; }
-  .approach-list li {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid rgba(45,45,94,0.1);
-    display: flex; align-items: baseline; gap: 1rem;
-    font-size: 0.95rem; font-weight: 300; color: #444;
-  }
-  .approach-list li::before {
-    content: '—'; color: var(--gold); font-weight: 600;
-  }
+  /* ===== ENFOQUE ===== */
+  .approach{max-width:960px;margin:0 auto;}
+  .approach-head{text-align:center;}
+  .approach-quote{position:relative;display:inline-block;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.6rem,3vw,2.3rem);
+    line-height:1.5;color:var(--navy);max-width:20ch;}
+  .approach-quote em{color:var(--gold-deep);font-style:italic;}
+  .approach-quote::after{content:'';position:absolute;bottom:-1.4rem;left:50%;transform:translateX(-50%);
+    width:0;height:2px;background:var(--gold);transition:width 1s cubic-bezier(.16,1,.3,1) .25s;}
+  .approach-quote.visible::after{width:64px;}
 
-  /* ===== AREAS ===== */
-  .areas { background: var(--beige-light); }
-  .areas-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
-  .areas-grid {
-    display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;
-  }
-  .area-item {
-    padding: 2rem 2.5rem;
-    border: 1px solid rgba(45,45,94,0.1);
-    transition: all 0.3s;
-  }
-  .area-item:hover { border-color: var(--gold); }
-  .area-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem; font-weight: 400; color: var(--navy);
-  }
-  .area-detail { font-size: 0.8rem; color: #777; letter-spacing: 0.1em; margin-top: 0.3rem; }
+  .dual-header{display:grid;grid-template-columns:1fr 40px 1fr;gap:1rem;margin:5.5rem 0 0.5rem;max-width:820px;margin-left:auto;margin-right:auto;}
+  .dual-header .l{text-align:right;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+  .dual-header .r{text-align:left;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;}
 
-  /* ===== EDUCATION ===== */
-  .edu-grid {
-    display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;
-    justify-content: center;
-  }
-  .edu-item {
-    padding: 1.2rem 1.4rem;
-    border: 1px solid var(--gold);
-    width: calc(33.333% - 0.7rem);
-    text-align: center;
-    box-sizing: border-box;
-  }
-  @media (max-width: 900px) {
-    .edu-item { width: calc(50% - 0.5rem); }
-  }
-  @media (max-width: 600px) {
-    .edu-item { width: 100%; }
-  }
-  .edu-school {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem; font-weight: 600; color: var(--navy);
-    margin-bottom: 0.3rem;
-  }
-  .edu-degree { font-size: 0.8rem; color: #555; font-weight: 300; line-height: 1.4; }
+  .dual-rows{max-width:820px;margin:1rem auto 0;}
+  .dual-row{display:grid;grid-template-columns:1fr 40px 1fr;gap:1rem;align-items:center;
+    padding:1.7rem 0;border-bottom:1px solid var(--line);}
+  .dual-row:last-child{border-bottom:none;}
+  .dual-left{text-align:right;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:1.05rem;line-height:1.55;color:var(--ink-soft);}
+  .dual-arrow{text-align:center;color:var(--gold-deep);font-size:1.1rem;opacity:0.7;}
+  .dual-right{text-align:left;font-size:0.92rem;line-height:1.65;color:var(--navy);font-weight:400;}
 
-  /* ===== CONTACT ===== */
-  .contact {
-    background: var(--navy); color: var(--beige);
-    text-align: center;
-  }
-  .contact .section-title { color: var(--beige); }
-  .contact-inner { max-width: 700px; margin: 0 auto; }
-  .contact-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; font-weight: 300; opacity: 0.85;
-    line-height: 1.7; margin-bottom: 3rem;
-  }
-  .contact-methods { display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
-  .contact-item {
-    display: flex; align-items: center; gap: 1rem;
-    text-decoration: none; color: var(--beige);
-    font-size: 1rem; font-weight: 300;
-    transition: color 0.3s;
-  }
-  .contact-item:hover { color: var(--gold); }
-  .contact-icon {
-    width: 40px; height: 40px;
-    border: 1px solid rgba(232,224,212,0.2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.85rem; flex-shrink: 0;
-    transition: border-color 0.3s;
-  }
-  .contact-item:hover .contact-icon { border-color: var(--gold); }
+  /* ===== SCROLL REVEAL genérico ===== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .dual-rows .reveal:nth-child(1){transition-delay:0ms;}
+  .dual-rows .reveal:nth-child(2){transition-delay:80ms;}
+  .dual-rows .reveal:nth-child(3){transition-delay:160ms;}
+  .dual-rows .reveal:nth-child(4){transition-delay:240ms;}
+  .dual-rows .reveal:nth-child(5){transition-delay:320ms;}
+  .dual-rows .reveal:nth-child(6){transition-delay:400ms;}
 
-  .contact-divider {
-    width: 60px; height: 1px; background: rgba(232,224,212,0.15);
-    margin: 2.5rem auto;
-  }
 
-  .contact-form-wrapper {
-    max-width: 520px; margin: 0 auto; text-align: left;
-  }
-  .contact-form-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 400; color: var(--beige);
-    text-align: center; margin-bottom: 2rem;
-  }
-  .form-group { margin-bottom: 1.3rem; }
-  .form-group label {
-    display: block; font-size: 0.7rem; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
-    font-weight: 400;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%; padding: 0.9rem 1rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(232,224,212,0.15);
-    color: var(--beige); font-family: 'Raleway', sans-serif;
-    font-size: 0.9rem; font-weight: 300;
-    outline: none; transition: border-color 0.3s;
-  }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: rgba(232,224,212,0.5);
-  }
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: var(--gold);
-  }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .form-submit {
-    display: inline-block; padding: 1em 3em; margin-top: 0.5rem;
-    background: transparent; border: 1px solid var(--gold);
-    color: var(--beige); font-family: 'Raleway', sans-serif;
-    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-    cursor: pointer; transition: all 0.4s ease; width: 100%;
-  }
-  .form-submit:hover { background: var(--gold); color: var(--navy); }
-  .form-success {
-    display: none; text-align: center; padding: 2rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem; color: var(--gold);
-  }
-  .form-privacy {
-    font-size: 0.7rem; color: rgba(232,224,212,0.5); font-weight: 300;
-    line-height: 1.6; margin-top: 1rem; text-align: center;
-  }
-  .form-privacy a { color: var(--gold); text-decoration: none; }
+  /* ===== TESTIMONIOS estilo social-proof ===== */
+  .testi{background:var(--paper-alt);}
+  .testi-inner{max-width:900px;margin:0 auto;text-align:center;}
 
-  .social-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
-  .social-links a {
-    color: var(--beige); text-decoration: none; font-size: 0.75rem;
-    letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5;
-    transition: opacity 0.3s;
-  }
-  .social-links a:hover { opacity: 1; }
+  .testi-top{display:flex;align-items:center;justify-content:center;gap:1.8rem;flex-wrap:wrap;margin-bottom:2rem;}
+  .testi-google{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;}
+  .g-name{color:var(--ink-soft);letter-spacing:0.03em;}
+  .g-stars{color:var(--gold-deep);letter-spacing:0.12em;font-size:0.9rem;}
 
-  @media (max-width: 600px) {
-    .form-row { grid-template-columns: 1fr; }
-  }
+  .testi-title{margin:0 auto 3.5rem;text-align:center;max-width:30ch;color:var(--navy);}
 
-  /* ===== TESTIMONIALS CAROUSEL ===== */
-  .testimonials { background: var(--navy-dark); color: var(--beige); }
-  .testimonials .section-title { color: var(--beige); }
-  .carousel { position: relative; margin-top: 2.5rem; }
-  .carousel-slide {
-    display: none; padding: 0 1rem;
-    animation: fadeIn 0.5s ease;
-  }
-  .carousel-slide.active { display: block; }
-  .testimonial-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 300; font-style: italic;
-    line-height: 1.8; opacity: 0.9;
-    margin-bottom: 1.5rem;
-  }
-  .testimonial-name {
-    font-size: 0.9rem; font-weight: 500; color: var(--gold);
-    letter-spacing: 0.05em;
-  }
-  .testimonial-role {
-    font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;
-    letter-spacing: 0.05em;
-  }
-  .carousel-dots {
-    display: flex; justify-content: center; gap: 0.6rem;
-    margin-top: 2rem;
-  }
-  .dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: rgba(232,224,212,0.2); cursor: pointer;
-    transition: background 0.3s;
-    padding: 0; border: none;
-  }
-  .dot.active { background: var(--gold); }
-  .carousel-arrows {
-    display: flex; justify-content: center; gap: 2rem;
-    margin-top: 1.2rem;
-  }
-  .carousel-arrow {
-    color: rgba(232,224,212,0.65); font-size: 1.4rem;
-    cursor: pointer; transition: color 0.3s;
-    user-select: none; padding: 0.5rem;
-  }
-  .carousel-arrow:hover { color: var(--gold); }
-  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .testi-carousel-wrap{position:relative;display:flex;align-items:center;justify-content:center;gap:1.2rem;max-width:900px;margin:0 auto;}
+  .testi-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:3.2rem 3.6rem;
+    flex:1;box-shadow:0 30px 60px -38px rgba(45,45,94,0.25);min-height:180px;}
+  .testi-arrow{background:none;border:none;font-size:1.7rem;color:rgba(45,45,94,0.3);cursor:pointer;
+    padding:0.5rem;transition:color .25s;flex-shrink:0;line-height:1;}
+  .testi-arrow:hover{color:var(--navy);}
 
-  /* ===== FOCUS STYLES (keyboard accessibility) ===== */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible, .dot:focus-visible, .carousel-arrow:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-  }
+  .testi-carousel{position:relative;}
+  .testi-slide{display:none;animation:fadeIn .4s ease;}
+  .testi-slide.active{display:block;}
+  .testi-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.15rem,2vw,1.45rem);
+    line-height:1.7;color:var(--navy);}
+  .testi-quote mark{background:rgba(184,163,119,0.32);color:inherit;padding:0.06em 0.3em;border-radius:3px;font-style:normal;}
+  .testi-name{margin-top:1.8rem;font-size:0.85rem;font-weight:600;color:var(--navy);letter-spacing:0.02em;}
+  .testi-role{font-size:0.75rem;color:var(--ink-soft);margin-top:0.2rem;}
+
+  /* ===== AREAS / COBERTURA ===== */
+  .areas{background:var(--paper-alt);text-align:center;}
+  .areas-inner{max-width:900px;margin:0 auto;}
+  .areas-sub{font-size:0.95rem;color:var(--ink-soft);font-weight:300;max-width:520px;margin:0 auto 1rem;line-height:1.7;}
+  .areas-grid{display:flex;justify-content:center;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;}
+  .area-item{padding:1.8rem 2.4rem;border:1px solid var(--line);border-radius:4px;text-decoration:none;transition:all .25s;min-width:160px;}
+  .area-item:hover{border-color:var(--gold-deep);background:rgba(184,163,119,0.05);}
+  .area-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy);}
+  .area-detail{font-size:0.76rem;color:var(--ink-soft);margin-top:0.3rem;letter-spacing:0.03em;}
 
   /* ===== FAQ ===== */
-  .faq { background: var(--beige-light); }
-  .faq-list { margin-top: 2.5rem; }
-  .faq-item {
-    border-bottom: 1px solid rgba(45,45,94,0.1);
-    padding: 1.2rem 0;
-  }
-  .faq-item summary {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem; font-weight: 500; color: var(--navy);
-    cursor: pointer; list-style: none; display: flex;
-    justify-content: space-between; align-items: center;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after {
-    content: '+'; font-size: 1.5rem; color: var(--gold);
-    font-weight: 300; transition: transform 0.3s;
-  }
-  .faq-item[open] summary::after { content: '−'; }
-  .faq-item p {
-    font-size: 0.95rem; line-height: 1.8; color: #444;
-    font-weight: 300; margin-top: 0.8rem; padding-right: 2rem;
-  }
+  .faq{background:var(--paper);}
+  .faq-inner{max-width:820px;margin:0 auto;}
+  .faq-list{margin-top:2.5rem;}
+  .faq-item{border-bottom:1px solid var(--line);padding:1.2rem 0;}
+  .faq-item summary{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--navy);
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'+';font-size:1.5rem;color:var(--gold-deep);font-weight:300;flex-shrink:0;}
+  .faq-item[open] summary::after{content:'−';}
+  .faq-item p{font-size:0.92rem;line-height:1.8;color:var(--ink-soft);font-weight:300;margin-top:0.8rem;}
 
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--navy-dark);
-    padding: 2rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.7rem; color: rgba(232,224,212,0.6);
-    letter-spacing: 0.1em;
-  }
+  /* ===== CONTACT ===== */
+  .contact{background:var(--navy);color:var(--paper);text-align:center;}
+  .contact h2{color:var(--paper);}
+  .contact p.sub{max-width:480px;margin:1.2rem auto 3rem;font-size:1rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.7;}
 
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
+  .contact-methods{display:flex;flex-direction:column;gap:1.2rem;align-items:center;}
+  .contact-item{color:var(--paper);text-decoration:none;font-size:0.95rem;font-weight:300;opacity:0.85;transition:opacity .25s, color .25s;}
+  .contact-item:hover{opacity:1;color:var(--gold);}
 
-  .reveal {
-    opacity: 0; transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .contact-divider{width:50px;height:1px;background:rgba(250,247,242,0.15);margin:2.5rem auto 1.2rem;}
+  .or-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,247,242,0.4);margin-bottom:2rem;}
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 2rem; }
-    nav.scrolled { padding: 0.8rem 2rem; }
-    .nav-links { display: none; }
-    .nav-links.open {
-      display: flex; flex-direction: column;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: var(--navy); padding: 2rem;
-      gap: 1.5rem;
-    }
-    .nav-links.open a.nav-blog { display: inline-block; align-self: flex-start; }
-    .hamburger { display: flex; }
+  .contact-form-wrapper{max-width:480px;margin:0 auto;text-align:left;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .form-group{margin-bottom:1.1rem;}
+  .form-group label{display:block;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+  .form-group input,.form-group textarea{width:100%;padding:0.85rem 1rem;background:rgba(250,247,242,0.05);
+    border:1px solid rgba(250,247,242,0.15);border-radius:3px;color:var(--paper);font-family:'Raleway',sans-serif;font-size:0.9rem;outline:none;transition:border-color .25s;}
+  .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(250,247,242,0.4);}
+  .form-group input:focus,.form-group textarea:focus{border-color:var(--gold);}
+  .form-group textarea{min-height:110px;resize:vertical;}
+  .form-submit{width:100%;padding:1em;margin-top:0.5rem;background:var(--gold);color:var(--navy-dark);border:none;border-radius:3px;
+    font-family:'Raleway',sans-serif;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:background .25s;}
+  .form-submit:hover{background:#cdb98a;}
+  .form-privacy{font-size:0.7rem;color:rgba(250,247,242,0.45);margin-top:1rem;text-align:center;}
+  .form-privacy a{color:var(--gold);text-decoration:none;}
 
-    section { padding: 4rem 2rem; }
-    .about { grid-template-columns: 1fr; gap: 2rem; }
-    .about-visual { order: -1; text-align: center; padding-top: 0; }
-    .about-visual img { max-width: 260px !important; }
-    .services-grid { grid-template-columns: 1fr; }
-    .approach-content { grid-template-columns: 1fr; gap: 2rem; }
-    .areas-grid { gap: 1rem; }
-    .area-item { padding: 1.2rem 1.5rem; }
-    .edu-grid { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
-  }
+  footer{background:var(--navy-dark);color:rgba(250,247,242,0.55);text-align:center;padding:2.8rem 2rem;font-size:0.72rem;letter-spacing:0.06em;line-height:1.8;}
+  .footer-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem;}
+  .footer-links a{color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.7rem;letter-spacing:0.08em;transition:color .25s;}
+  .footer-links a:hover{color:var(--gold);}
 
-  @media (max-width: 600px) {
-    .hero-name { font-size: 3.2rem; }
-    .about-stats { grid-template-columns: 1fr; }
-    .edu-grid { grid-template-columns: 1fr; }
-    .areas-grid { flex-direction: column; align-items: center; }
+  .cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--navy-dark);
+    padding:1.2rem 2rem;box-shadow:0 -2px 30px rgba(0,0,0,0.25);align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+  .cookie-banner p{color:var(--paper);font-size:0.83rem;font-weight:300;margin:0;max-width:600px;}
+  .cookie-banner a{color:var(--gold);}
+  .cookie-actions{display:flex;gap:0.7rem;flex-wrap:wrap;}
+  .cookie-accept,.cookie-reject,.cookie-reject-all{padding:0.6em 1.3em;border:none;font-family:'Raleway',sans-serif;
+    font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:3px;}
+  .cookie-accept{background:var(--gold);color:var(--navy-dark);font-weight:700;}
+  .cookie-reject{background:transparent;color:var(--paper);border:1px solid rgba(250,247,242,0.3);}
+  .cookie-reject-all{background:transparent;color:rgba(250,247,242,0.5);text-decoration:underline;}
+
+  @media(max-width:900px){
+    nav{padding:1rem 1.5rem;}
+    .nav-links{display:none;}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);padding:1.5rem;gap:1.2rem;border-bottom:1px solid var(--line);
+      box-shadow:0 14px 24px -12px rgba(45,45,94,0.18);}
+    .hamburger{display:flex;}
+    section{padding:5rem 1.6rem;}
+    .about{grid-template-columns:1fr;gap:2.5rem;}
+    .about-visual::before{display:none;}
+    .journey-layout{grid-template-columns:1fr;gap:2rem;}
+    .stage-nav{position:sticky;top:4.2rem;z-index:20;background:var(--paper-alt);flex-direction:row;
+      overflow-x:auto;gap:0.8rem;padding:0.9rem 0.2rem;margin:0 -1.6rem;padding-left:1.6rem;
+      box-shadow:0 8px 12px -8px rgba(45,45,94,0.12);-webkit-overflow-scrolling:touch;}
+    .stage-btn{border-left:none;border-bottom:2px solid transparent;padding:0.5rem 0.9rem;}
+    .stage-btn.active{border-left:none;border-bottom-color:var(--gold-deep);}
+    .stage-panels{gap:2rem;}
+    .stage-panel{padding:2rem;max-width:100%;}
+    .form-row{grid-template-columns:1fr;}
+    .edu-item{width:calc(50% - 0.5rem);}
+    .about-stats{gap:1.8rem;}
+    .hero-meta{gap:1.6rem;}
+    .dual-header{display:none;}
+    .dual-rows{margin-top:0.5rem;}
+    .dual-row{grid-template-columns:1fr;text-align:left;gap:0;padding:0;border-bottom:none;
+      background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.5rem 1.3rem;margin-bottom:1rem;}
+    .dual-left,.dual-right{text-align:left;}
+    .dual-left::before{content:'Como gestor';display:block;font-family:'Raleway',sans-serif;font-style:normal;
+      font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);margin-bottom:0.5rem;}
+    .dual-right::before{content:'Como abogado';display:block;font-family:'Raleway',sans-serif;
+      font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin-bottom:0.5rem;}
+    .dual-arrow{display:flex;align-items:center;gap:0.6rem;margin:0.9rem 0;color:var(--ink-soft);font-size:0.7rem;
+      letter-spacing:0.08em;text-transform:uppercase;}
+    .dual-arrow::before,.dual-arrow::after{content:'';flex:1;height:1px;background:var(--line);}
+    .dual-arrow{transform:none;}
+    .testi-carousel-wrap{gap:0.4rem;}
+    .testi-card{padding:2.2rem 1.6rem;}
+    .testi-arrow{font-size:1.3rem;padding:0.2rem;}
+    .testi-top{gap:1rem;}
   }
 </style>
 </head>
@@ -690,206 +439,213 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<a href="#sobre-mi" class="skip-link">Saltar al contenido</a>
-
-<!-- NAV -->
-<nav id="navbar" aria-label="Navegación principal">
-  <a href="/" class="nav-logo" aria-label="Sergio Mármol, Abogado Mercantil — Inicio">SERGIO MÁRMOL<span>Abogado</span></a>
+<nav id="navbar">
+  <a href="/" class="nav-logo" aria-label="Sergio Mármol, Abogado — Inicio">Sergio Mármol<span>Abogado</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#recorrido">Servicios</a></li>
     <li><a href="#enfoque">Enfoque</a></li>
     <li><a href="#preguntas">FAQ</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="/blog" class="nav-blog">Blog</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0" onclick="document.getElementById('navLinks').classList.toggle('open')" onkeydown="if(event.key==='Enter')document.getElementById('navLinks').classList.toggle('open')">
+  <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menú">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-name">Sergio<br>Mármol</h1>
-    <p class="hero-title">Abogado Mercantil &amp; Societario para Empresas y Autónomos</p>
-    <p class="hero-sub">Desde estructurar tu empresa para hacerla crecer hasta protegerla cuando surgen problemas. Holdings, pactos de socios, contratos, M&amp;A, reestructuraciones y más.</p>
-    <a href="#contacto" class="hero-cta">Hablemos</a>
+  <div class="hero-grid">
+    <p class="hero-eyebrow">Abogado mercantil &amp; societario</p>
+    <h1>Ayudo a <em>crecer</em> tu negocio<br>y lo <em>protejo</em> cuando surgen problemas</h1>
+    <p class="hero-sub">Antes de ser abogado, he sido administrador y asesor legal interno de una empresa. Hoy aplico esa doble mirada — legal y de negocio — para acompañar a pymes, autónomos y startups.</p>
+    <a href="#contacto" class="btn-primary">Hablemos</a>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="sobre-mi" style="padding:6rem 4rem;">
-  <div class="reveal" style="max-width:1200px;margin:0 auto;">
-    <p class="section-label">Sobre mí</p>
-    <h2 class="section-title">Un abogado mercantilista<br>que entiende tu negocio</h2>
-  </div>
-  <div class="about reveal">
-    <div class="about-text">
-      <p>Mi trayectoria no es la de un abogado convencional. Antes de fundar mi propia firma, he sido administrador y asesor legal interno de una empresa, donde gestioné contratos, lideré licitaciones, negocié con bancos y tomé decisiones de negocio.</p>
-      <p>Esa experiencia me dio algo que no se aprende en los libros: la capacidad de entender tu problema como empresario, no solo como jurista. Hoy aplico esa visión 360° como abogado mercantil al servicio de pymes, autónomos y startups.</p>
-      <div class="about-stats">
-        <div class="stat">
-          <div class="stat-number">360°</div>
-          <div class="stat-label">Visión legal y empresarial: he dirigido una empresa desde dentro</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Dedicación exclusiva a derecho mercantil y societario</div>
-        </div>
-      </div>
-    </div>
+<section id="sobre-mi">
+  <div class="about">
     <div class="about-visual">
-      <img src="sergiomarmolabogado.webp" loading="lazy" decoding="async" alt="Sergio Mármol, abogado mercantilista para empresas y autónomos en Madrid, Jaén y Almería">
+      <img src="sergiomarmolabogado.png" alt="Sergio Mármol, abogado mercantilista">
+    </div>
+    <div class="about-text">
+      <span class="label">Sobre mí</span>
+      <h2 class="big">Un abogado que <em>entiende</em><br>tu negocio</h2>
+      <p>Mi trayectoria no es la de un abogado convencional. Antes de fundar mi propia firma, fui administrador y asesor legal interno de una empresa: gestioné contratos, lideré licitaciones y negocié con bancos.</p>
+      <p>Esa experiencia me dio algo que no se aprende en los libros: la capacidad de entender tu problema como empresario, no solo como jurista.</p>
+      <div class="about-stats">
+        <div class="about-stat"><div class="stat-n">360°</div><div class="stat-l">Visión legal y empresarial: he dirigido una empresa desde dentro</div></div>
+        <div class="about-stat"><div class="stat-n">100%</div><div class="stat-l">Dedicación exclusiva a derecho mercantil y societario</div></div>
+      </div>
     </div>
   </div>
-  <div class="reveal" style="max-width:1200px;margin:4rem auto 0;">
-    <p style="margin-bottom:1.5rem;font-size:0.9rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:500;">Formación al servicio de tu negocio</p>
+
+  <div class="edu-block">
+    <p class="edu-label">Formación al servicio de tu negocio</p>
     <div class="edu-grid">
-      <div class="edu-item">
-        <div class="edu-school">ISDE Law &amp; Business School</div>
-        <div class="edu-degree">Máster en Abogacía Internacional</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-school">New York University</div>
-        <div class="edu-degree">Program in Negotiation</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-school">VIU</div>
-        <div class="edu-degree">Máster en Abogacía y Práctica Jurídica</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-school">Universidad de Jaén</div>
-        <div class="edu-degree">Grado en Derecho</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-school">Universidad Rey Juan Carlos</div>
-        <div class="edu-degree">Curso Superior en Asesoría Fiscal</div>
-      </div>
+      <div class="edu-item"><div class="edu-school">ISDE Law &amp; Business School</div><div class="edu-degree">Máster en Abogacía Internacional</div></div>
+      <div class="edu-item"><div class="edu-school">New York University</div><div class="edu-degree">Program in Negotiation</div></div>
+      <div class="edu-item"><div class="edu-school">VIU</div><div class="edu-degree">Máster en Abogacía y Práctica Jurídica</div></div>
+      <div class="edu-item"><div class="edu-school">Universidad de Jaén</div><div class="edu-degree">Grado en Derecho</div></div>
+      <div class="edu-item"><div class="edu-school">Universidad Rey Juan Carlos</div><div class="edu-degree">Curso Superior en Asesoría Fiscal</div></div>
     </div>
   </div>
 </section>
 
-<section id="servicios" class="services">
-  <div class="services-inner reveal">
-    <p class="section-label">Servicios</p>
-    <h2 class="section-title">Servicios de abogado mercantil<br>para pymes y autónomos</h2>
-
-    <p style="color:var(--gold);font-size:0.9rem;letter-spacing:0.25em;text-transform:uppercase;margin-top:3rem;margin-bottom:1.5rem;">Hago crecer tu negocio</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-number">01</div>
-        <h3 class="service-name">Holdings y Estructuración Societaria</h3>
-        <p class="service-desc">Diseño de estructuras de holding y grupos de sociedades para optimizar la gestión, proteger el patrimonio y mejorar la eficiencia de tu negocio.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">02</div>
-        <h3 class="service-name">Reestructuraciones y Operaciones Corporativas</h3>
-        <p class="service-desc">Fusiones, escisiones, transformaciones societarias (SL a SA y viceversa) y operaciones de M&A: due diligence, compraventa de participaciones y activos.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">03</div>
-        <h3 class="service-name">De Autónomo a Sociedad</h3>
-        <p class="service-desc">Planificación societaria para autónomos que quieren dar el salto a SL: elección de forma jurídica, constitución, estatutos y estructura óptima desde el primer día.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">04</div>
-        <h3 class="service-name">Empresa Familiar y Sucesión</h3>
-        <p class="service-desc">Protocolo familiar, planificación del relevo generacional y estructuración de la sucesión del negocio para garantizar su continuidad.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">05</div>
-        <h3 class="service-name">Secretaría Societaria</h3>
-        <p class="service-desc">Gestión integral de la vida corporativa: actas de juntas, libros de socios, certificaciones, inscripciones en el Registro Mercantil, ampliaciones de capital y nombramientos.</p>
-      </div>
-      <a href="/pactos-de-socios" class="service-card" style="text-decoration:none;display:block;color:var(--beige);">
-        <div class="service-number">06</div>
-        <h3 class="service-name">Pactos de Socios y Gobierno Corporativo</h3>
-        <p class="service-desc">Redacción y negociación de pactos de socios, cláusulas de arrastre y acompañamiento, derechos de adquisición preferente y reglas de convivencia entre socios.</p>
-      </a>
+<!-- JOURNEY / SERVICIOS -->
+<section id="recorrido" class="journey">
+  <div class="journey-inner">
+    <div class="journey-head">
+      <span class="label">Servicios</span>
+      <h2 class="big">El recorrido real<br>de tu empresa</h2>
+      <p>No es una lista de servicios — es el camino que recorre un empresario, y en cada etapa te acompaño.</p>
     </div>
 
-    <p style="color:var(--gold);font-size:0.9rem;letter-spacing:0.25em;text-transform:uppercase;margin-top:3rem;margin-bottom:1.5rem;">Protejo tu empresa</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-number">07</div>
-        <h3 class="service-name">Contratación Mercantil</h3>
-        <p class="service-desc">Redacción, revisión y negociación de contratos comerciales: distribución, franquicia, suministro, agencia, joint ventures y acuerdos de confidencialidad.</p>
+    <div class="journey-layout">
+      <div class="stage-nav" id="stageNav">
+        <button class="stage-btn active" data-target="stage-0"><span class="num">01</span>Constituir</button>
+        <button class="stage-btn" data-target="stage-1"><span class="num">02</span>Operar cada día</button>
+        <button class="stage-btn" data-target="stage-2"><span class="num">03</span>Pactar con socios</button>
+        <button class="stage-btn" data-target="stage-3"><span class="num">04</span>Estructurar</button>
+        <button class="stage-btn" data-target="stage-4"><span class="num">05</span>Resolver conflictos</button>
+        <button class="stage-btn" data-target="stage-5"><span class="num">06</span>Vender o fusionar</button>
       </div>
-      <div class="service-card">
-        <div class="service-number">08</div>
-        <h3 class="service-name">Disputas, Conflictos y Litigación</h3>
-        <p class="service-desc">Conflictos entre socios, incumplimientos contractuales, reclamación de impagos, impugnación de acuerdos sociales y resolución extrajudicial de controversias.</p>
+
+      <div class="stage-panels">
+        <div class="stage-panel" id="stage-0">
+          <h3 class="stage-title">De autónomo a <em>Sociedad Limitada</em></h3>
+          <p class="stage-desc">Eliges la forma jurídica adecuada, redacto los estatutos y diseño la estructura óptima desde el primer día — para que crecer no te cueste más adelante.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">De autónomo a sociedad</h4> — planificación societaria para dar el salto: forma jurídica, estatutos y estructura desde el primer día. <a href="/autonomo-sl">Leer más →</a></li>
+          </ul>
+        </div>
+
+        <div class="stage-panel" id="stage-1">
+          <h3 class="stage-title">Contratos y licitaciones <em>del día a día</em></h3>
+          <p class="stage-desc">La actividad mercantil no se detiene: cada contrato y cada licitación es una oportunidad de blindar tu negocio o de dejarlo expuesto.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">Contratación mercantil</h4> — redacción, revisión y negociación de contratos: distribución, suministro, agencia, confidencialidad. <a href="/clausulas-contrato-mercantil">Leer más →</a></li>
+            <li><h4 class="service-name">Licitaciones públicas</h4> — preparación y presentación de ofertas, recursos especiales y procedimientos ante órganos de contratación. <a href="/licitaciones-publicas">Leer más →</a></li>
+          </ul>
+        </div>
+
+        <div class="stage-panel" id="stage-2">
+          <h3 class="stage-title">Pactos de socios y <em>gobierno corporativo</em></h3>
+          <p class="stage-desc">Redacto y negocio pactos de socios, cláusulas de arrastre y acompañamiento, derechos de adquisición preferente y reglas claras de convivencia entre socios.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">Pactos de socios y gobierno corporativo</h4> — cláusulas de arrastre y acompañamiento, derechos de adquisición preferente, reglas de convivencia. <a href="/pactos-de-socios">Leer más →</a></li>
+            <li><h4 class="service-name">Secretaría societaria</h4> — actas de juntas, libros de socios, inscripciones en el Registro Mercantil, ampliaciones de capital.</li>
+          </ul>
+        </div>
+
+        <div class="stage-panel" id="stage-3">
+          <h3 class="stage-title">Holdings y <em>estructuración</em> societaria</h3>
+          <p class="stage-desc">Diseño grupos de sociedades para optimizar la gestión, proteger el patrimonio y mejorar la eficiencia fiscal y operativa de tu negocio.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">Holdings y estructuración societaria</h4> — grupos de sociedades para optimizar la gestión y proteger el patrimonio. <a href="/holdings-estructuracion-societaria">Leer más →</a></li>
+            <li><h4 class="service-name">Sucesión y continuidad del negocio</h4> — planificación del relevo generacional y estructuración de la sucesión.</li>
+          </ul>
+        </div>
+
+        <div class="stage-panel" id="stage-4">
+          <h3 class="stage-title">Conflictos entre <em>socios</em></h3>
+          <p class="stage-desc">Negociación, mediación, compraventa de participaciones, derecho de separación o, en último caso, disolución judicial — según lo que diga tu pacto de socios y tus estatutos.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">Disputas, conflictos y litigación</h4> — conflictos entre socios, incumplimientos contractuales, impugnación de acuerdos sociales. <a href="/problemas-socio-empresa">Leer más →</a></li>
+            <li><h4 class="service-name">Responsabilidad de administradores</h4> — prevención y defensa frente a acciones de responsabilidad patrimonial. <a href="/responsabilidad-administrador-sl">Leer más →</a></li>
+          </ul>
+        </div>
+
+        <div class="stage-panel" id="stage-5">
+          <h3 class="stage-title">M&amp;A y <em>venta</em> de tu empresa</h3>
+          <p class="stage-desc">Fusiones, escisiones, transformaciones societarias, due diligence y compraventa de participaciones o activos — acompañándote en cada fase de la operación.</p>
+          <ul class="service-list">
+            <li><h4 class="service-name">M&amp;A y compraventa de empresas</h4> — due diligence y compraventa de participaciones o activos.</li>
+            <li><h4 class="service-name">Reestructuraciones societarias</h4> — fusiones, escisiones y transformaciones (SL a SA y viceversa).</li>
+          </ul>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="service-number">09</div>
-        <h3 class="service-name">Licitaciones Públicas</h3>
-        <p class="service-desc">Preparación y presentación de ofertas en licitaciones públicas y privadas, recursos especiales y procedimientos ante órganos de contratación.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-number">10</div>
-        <h3 class="service-name">Responsabilidad de Administradores</h3>
-        <p class="service-desc">Prevención y defensa frente a acciones de responsabilidad patrimonial, derivación de deudas con Hacienda y Seguridad Social. Protege tu patrimonio personal.</p>
-      </div>
+
     </div>
   </div>
 </section>
 
-<!-- APPROACH -->
+<!-- ENFOQUE -->
 <section id="enfoque" class="approach">
-  <div class="approach-inner reveal">
-    <p class="section-label">Mi enfoque</p>
-    <h2 class="section-title">Abogacía de negocios,<br>no abogacía de despacho</h2>
-    <div class="approach-content">
-      <p class="approach-text">Creo en una abogacía que no solo resuelve problemas, sino que estructura el negocio para que crezca. Entiendo los números, anticipo los riesgos y hablo el idioma del empresario.</p>
-      <ul class="approach-list">
-        <li>Visión estratégica: estructuro tu empresa para que sea más eficiente y rentable</li>
-        <li>Experiencia real en gestión empresarial, no solo teoría jurídica</li>
-        <li>Prevención: resolver problemas antes de que lleguen al juzgado</li>
-        <li>Acompañamiento continuo: desde constituir tu SL hasta crear un grupo de sociedades</li>
-        <li>Comunicación clara y directa, sin jerga innecesaria</li>
-        <li>Flexibilidad total: presencial y online, adaptado a tu ritmo</li>
-      </ul>
+  <div class="approach-head">
+    <span class="label">Mi enfoque</span>
+    <p class="approach-quote reveal">Abogacía de <em>negocios</em>, no abogacía de despacho.</p>
+  </div>
+
+  <div class="dual-header">
+    <div class="l">Como gestor, aprendí</div>
+    <div></div>
+    <div class="r">Como abogado, aplico</div>
+  </div>
+
+  <div class="dual-rows">
+    <div class="dual-row reveal">
+      <p class="dual-left">A tomar decisiones con los números delante, no solo con la ley en la mano.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Reviso cada contrato pensando también en tu cuenta de resultados.</p>
+    </div>
+    <div class="dual-row reveal">
+      <p class="dual-left">A liderar licitaciones y negociar directamente con bancos.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Entiendo lo que hay en juego antes de firmar, no solo lo que dice el papel.</p>
+    </div>
+    <div class="dual-row reveal">
+      <p class="dual-left">Que un problema resuelto a tiempo cuesta mucho menos que uno judicializado.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Trabajo para anticipar el conflicto, no solo para defenderte de él.</p>
+    </div>
+    <div class="dual-row reveal">
+      <p class="dual-left">Que un negocio cambia de fase constantemente — y su estructura debe seguirle el ritmo.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Te acompaño desde que constituyes tu SL hasta que estructuras un grupo de sociedades.</p>
+    </div>
+    <div class="dual-row reveal">
+      <p class="dual-left">Que el tiempo de un empresario vale oro y no sobra para descifrar jerga.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Hablo claro y directo, sin tecnicismos innecesarios.</p>
+    </div>
+    <div class="dual-row reveal">
+      <p class="dual-left">Que cada negocio tiene su propio ritmo y sus propias urgencias.</p>
+      <span class="dual-arrow">→</span>
+      <p class="dual-right">Me adapto — presencial u online, cuando te venga bien.</p>
     </div>
   </div>
 </section>
 
-<!-- AREAS -->
+<!-- COBERTURA -->
 <section class="areas">
-  <div class="areas-inner reveal">
-    <p class="section-label">Cobertura</p>
-    <h2 class="section-title">Dónde trabajo</h2>
-    <p style="color:#888;font-size:0.9rem;font-weight:300;max-width:550px;margin:0 auto 1rem;">Mi actividad principal se centra en estas zonas, aunque ofrezco asesoramiento online en toda España y flexibilidad para desplazarme donde me necesites.</p>
+  <div class="areas-inner">
+    <span class="label">Cobertura</span>
+    <h2 class="big">Dónde trabajo</h2>
+    <p class="areas-sub">Mi actividad principal se centra en estas zonas, aunque ofrezco asesoramiento online en toda España y flexibilidad para desplazarme donde me necesites.</p>
     <div class="areas-grid">
-      <a href="/abogado-mercantil-madrid" class="area-item" style="text-decoration:none;">
-        <div class="area-name">Madrid</div>
-        <div class="area-detail">Presencial y online</div>
-      </a>
-      <a href="/abogado-mercantil-jaen" class="area-item" style="text-decoration:none;">
-        <div class="area-name">Jaén</div>
-        <div class="area-detail">Presencial y online</div>
-      </a>
-      <a href="/abogado-mercantil-almeria" class="area-item" style="text-decoration:none;">
-        <div class="area-name">Almería</div>
-        <div class="area-detail">Presencial y online</div>
-      </a>
+      <a href="/abogado-mercantil-madrid" class="area-item"><div class="area-name">Madrid</div><div class="area-detail">Presencial y online</div></a>
+      <a href="/abogado-mercantil-jaen" class="area-item"><div class="area-name">Jaén</div><div class="area-detail">Presencial y online</div></a>
+      <a href="/abogado-mercantil-almeria" class="area-item"><div class="area-name">Almería</div><div class="area-detail">Presencial y online</div></a>
     </div>
   </div>
 </section>
 
-<!-- FAQ (visible + schema arriba en head) -->
-<section class="faq" id="preguntas">
-  <div class="faq-inner reveal" style="max-width:900px;margin:0 auto;">
-    <p class="section-label">Preguntas frecuentes</p>
-    <h2 class="section-title">Lo que más me preguntan<br>empresarios y autónomos</h2>
+<!-- FAQ -->
+<section id="preguntas" class="faq">
+  <div class="faq-inner">
+    <span class="label">Preguntas frecuentes</span>
+    <h2 class="big">Lo que más me preguntan<br>empresarios y autónomos</h2>
     <div class="faq-list">
       <details class="faq-item">
         <summary>¿Qué hace un abogado mercantilista?</summary>
-        <p>Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción y revisión de contratos mercantiles, operaciones de compraventa de empresas (M&A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras.</p>
+        <p>Un abogado mercantilista asesora a empresas, autónomos y emprendedores en cuestiones legales relacionadas con su actividad comercial: constitución de sociedades, pactos de socios, redacción y revisión de contratos mercantiles, operaciones de compraventa de empresas (M&amp;A), conflictos entre socios, licitaciones públicas y responsabilidad de administradores, entre otras.</p>
       </details>
       <details class="faq-item">
         <summary>¿Cuánto cuesta un abogado mercantil?</summary>
-        <p>Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&A o un conflicto societario. Contacta conmigo para valorar tu caso y recibir un presupuesto cerrado antes de empezar.</p>
+        <p>Los honorarios dependen del tipo de servicio. Una consulta puntual o revisión de contrato tiene un coste diferente a una operación de M&amp;A o un conflicto societario. Contacta conmigo para valorar tu caso y recibir un presupuesto cerrado antes de empezar.</p>
       </details>
       <details class="faq-item">
         <summary>¿Necesito un abogado para crear una sociedad limitada?</summary>
@@ -911,235 +667,160 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- TESTIMONIOS -->
+<section class="testi">
+  <div class="testi-inner">
+    <div class="testi-top">
+      <div class="testi-google">
+        <span class="g-name">Reseñas verificadas en Google</span>
+        <span class="g-stars">★★★★★</span>
+      </div>
+    </div>
+
+    <h2 class="big testi-title">Resultados reales para<br>empresarios reales</h2>
+
+    <div class="testi-carousel-wrap">
+      <button class="testi-arrow" id="testiPrev" aria-label="Testimonio anterior">‹</button>
+      <div class="testi-card">
+        <div class="testi-carousel">
+          <div class="testi-slide active">
+            <p class="testi-quote">"En todo momento me he sentido <mark>bien asesorada y acompañada</mark>, lo cual marca una gran diferencia. Su <mark>claridad a la hora de explicar cada paso</mark> y la dedicación con la que ha llevado mi caso han sido excelentes. <mark>Lo recomiendo</mark> a cualquier persona que necesite asesoramiento legal de calidad."</p>
+            <div class="testi-name">Lola M.C.</div>
+            <div class="testi-role">Gerente de oficina en TOLDOS L&amp;L · Cliente</div>
+          </div>
+          <div class="testi-slide">
+            <p class="testi-quote">"En nuestra colaboración en un contrato de suministro y arrendamiento, <mark>transformó negociaciones complejas en acuerdos exitosos</mark>. Gestionó los puntos más delicados con precisión y agilidad. Destaco su <mark>impecable formación técnica</mark>, pero sobre todo, el valor que aporta su <mark>calidad humana</mark> al proceso."</p>
+            <div class="testi-name">Manuel Del Pino Schrick</div>
+            <div class="testi-role">Area Manager en Holcim España</div>
+          </div>
+          <div class="testi-slide">
+            <p class="testi-quote">"Su habilidad para <mark>comunicarse de manera efectiva y clara</mark> con los clientes del despacho es lo que más destaca. Tiene una gran capacidad de adaptación y resiliencia, y su habilidad para encontrar <mark>soluciones innovadoras</mark> a los problemas y retos ha sido magnífica."</p>
+            <div class="testi-name">Raúl Montoro Rodríguez</div>
+            <div class="testi-role">Socio-Director en Surco Legal, S.L.P.</div>
+          </div>
+        </div>
+      </div>
+      <button class="testi-arrow" id="testiNext" aria-label="Siguiente testimonio">›</button>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contacto" class="contact">
-  <div class="contact-inner reveal">
-    <p class="section-label">Contacto</p>
-    <h2 class="section-title">¿Hablamos?</h2>
-    <p class="contact-subtitle">Si necesitas un abogado mercantilista que entienda tu negocio y hable tu idioma, estaré encantado de escucharte.</p>
-    <div class="contact-methods">
-      <a href="mailto:sergiomarmol@smlegal.es" class="contact-item" aria-label="Enviar email a Sergio Mármol">
-        <div class="contact-icon" aria-hidden="true">✉</div>
-        <span>sergiomarmol@smlegal.es</span>
-      </a>
-      <a href="tel:+34677074680" class="contact-item" aria-label="Llamar a Sergio Mármol">
-        <div class="contact-icon" aria-hidden="true">☎</div>
-        <span>+34 677 07 46 80</span>
-      </a>
-      <a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" class="contact-item" aria-label="Perfil de LinkedIn de Sergio Mármol">
-        <div class="contact-icon" aria-hidden="true">in</div>
-        <span>LinkedIn · @sergiomarmolmendez</span>
-      </a>
+  <span class="label">Contacto</span>
+  <h2 class="big">¿Hablamos?</h2>
+  <p class="sub">Si necesitas un abogado mercantilista que entienda tu negocio y hable tu idioma, estaré encantado de escucharte.</p>
+
+  <div class="contact-methods">
+    <a href="mailto:sergiomarmol@smlegal.es" class="contact-item">✉ sergiomarmol@smlegal.es</a>
+    <a href="tel:+34677074680" class="contact-item">☎ +34 677 07 46 80</a>
+    <a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" class="contact-item">in LinkedIn</a>
+  </div>
+
+  <div class="contact-divider"></div>
+  <p class="or-label">O si lo prefieres</p>
+
+  <div class="contact-form-wrapper">
+    <div class="form-row">
+      <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Tu nombre"></div>
+      <div class="form-group"><label for="empresa">Empresa</label><input type="text" id="empresa" placeholder="Tu empresa (opcional)"></div>
     </div>
-    <div class="contact-divider"></div>
-
-    <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(232,224,212,0.4);margin-bottom:0.5rem;">O si lo prefieres</p>
-
-    <div class="contact-form-wrapper">
-      <p class="contact-form-title">Envíame un mensaje</p>
-      <div id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
-          </div>
-          <div class="form-group">
-            <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Tu empresa (opcional)" autocomplete="organization">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
-          </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="asunto">Asunto</label>
-          <input type="text" id="asunto" name="asunto" placeholder="¿En qué puedo ayudarte?" required>
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación..." required></textarea>
-        </div>
-        <button type="button" class="form-submit" onclick="enviarFormulario()">Enviar mensaje</button>
-        <p class="form-privacy">Al enviar este formulario aceptas la <a href="/politica-privacidad">Política de Privacidad</a>. Tus datos solo se usarán para responder a tu consulta.</p>
-      </div>
-      <div class="form-success" id="formSuccess">
-        ✓ Mensaje enviado correctamente.<br>Te responderé lo antes posible.
-      </div>
+    <div class="form-row">
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="tu@email.com"></div>
+      <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono" placeholder="+34 600 000 000"></div>
     </div>
-
+    <div class="form-group"><label for="asunto">Asunto</label><input type="text" id="asunto" placeholder="¿En qué puedo ayudarte?"></div>
+    <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" placeholder="Cuéntame brevemente tu situación..."></textarea></div>
+    <button type="button" class="form-submit">Enviar mensaje</button>
+    <p class="form-privacy">Al enviar este formulario aceptas la <a href="/politica-privacidad">Política de Privacidad</a>.</p>
   </div>
 </section>
 
-<!-- TESTIMONIALS CAROUSEL -->
-<section class="testimonials" style="padding-top:3rem;padding-bottom:3rem;">
-  <div class="testimonials-inner reveal" style="max-width:700px;margin:0 auto;text-align:center;">
-    <p class="section-label">Recomendaciones</p>
-    <h2 class="section-title">Lo que dicen de mí</h2>
-    <div class="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide active">
-          <div class="testimonial-quote">"En todo momento me he sentido bien asesorada y acompañada, lo cual marca una gran diferencia. Su claridad a la hora de explicar cada paso y la dedicación con la que ha llevado mi caso han sido excelentes. Lo recomiendo a cualquier persona que necesite asesoramiento legal de calidad."</div>
-          <div class="testimonial-name">Lola M.C.</div>
-          <div class="testimonial-role">Gerente de oficina en TOLDOS L&L · Cliente</div>
-        </div>
-        <div class="carousel-slide">
-          <div class="testimonial-quote">"En nuestra colaboración en un contrato de suministro y arrendamiento, transformó negociaciones complejas en acuerdos exitosos. Gestionó los puntos más delicados con precisión y agilidad. Destaco su impecable formación técnica, pero sobre todo, el valor que aporta su calidad humana al proceso."</div>
-          <div class="testimonial-name">Manuel Del Pino Schrick</div>
-          <div class="testimonial-role">Area Manager en Holcim España</div>
-        </div>
-        <div class="carousel-slide">
-          <div class="testimonial-quote">"Su habilidad para comunicarse de manera efectiva y clara con los clientes del despacho es lo que más destaca. Tiene una gran capacidad de adaptación y resiliencia, y su habilidad para encontrar soluciones innovadoras a los problemas y retos ha sido magnífica."</div>
-          <div class="testimonial-name">Raúl Montoro Rodríguez</div>
-          <div class="testimonial-role">Socio-Director en Surco Legal, S.L.P.</div>
-        </div>
-      </div>
-      <div class="carousel-dots" role="tablist" aria-label="Testimonios">
-        <span class="dot active" role="tab" tabindex="0" aria-label="Testimonio 1" onclick="goToSlide(0)" onkeydown="if(event.key==='Enter')goToSlide(0)"></span>
-        <span class="dot" role="tab" tabindex="0" aria-label="Testimonio 2" onclick="goToSlide(1)" onkeydown="if(event.key==='Enter')goToSlide(1)"></span>
-        <span class="dot" role="tab" tabindex="0" aria-label="Testimonio 3" onclick="goToSlide(2)" onkeydown="if(event.key==='Enter')goToSlide(2)"></span>
-      </div>
-      <div class="carousel-arrows">
-        <span class="carousel-arrow" tabindex="0" aria-label="Testimonio anterior" onclick="changeSlide(-1)" onkeydown="if(event.key==='Enter')changeSlide(-1)">←</span>
-        <span class="carousel-arrow" tabindex="0" aria-label="Testimonio siguiente" onclick="changeSlide(1)" onkeydown="if(event.key==='Enter')changeSlide(1)">→</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <span>© 2026 Sergio Mármol — Abogado Mercantil y Societario</span>
-  <span>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Abogado mercantilista en Madrid, Jaén y Almería</span>
-  <div style="margin-top:1rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;">
-    <a href="/abogado-mercantil-jaen" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Abogado Mercantil Jaén</a>
-    <a href="/abogado-mercantil-madrid" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Abogado Mercantil Madrid</a>
-    <a href="/abogado-mercantil-almeria" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Abogado Mercantil Almería</a>
-    <a href="/aviso-legal" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Aviso Legal</a>
-    <a href="/politica-privacidad" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Privacidad</a>
-    <a href="/politica-cookies" style="color:rgba(232,224,212,0.75);text-decoration:none;font-size:0.7rem;letter-spacing:0.1em;">Política de Cookies</a>
+  <p>© 2026 Sergio Mármol — Abogado Mercantil y Societario</p>
+  <p>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Abogado mercantilista en Madrid, Jaén y Almería</p>
+  <div class="footer-links">
+    <a href="/abogado-mercantil-jaen">Abogado Mercantil Jaén</a>
+    <a href="/abogado-mercantil-madrid">Abogado Mercantil Madrid</a>
+    <a href="/abogado-mercantil-almeria">Abogado Mercantil Almería</a>
+    <a href="/aviso-legal">Aviso Legal</a>
+    <a href="/politica-privacidad">Política de Privacidad</a>
+    <a href="/politica-cookies">Política de Cookies</a>
   </div>
 </footer>
 
 <!-- COOKIE BANNER -->
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
-  <p style="color:var(--beige);font-size:0.85rem;font-weight:300;margin:0;max-width:600px;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" style="color:var(--gold);">Más información</a></p>
-  <div style="display:flex;gap:0.8rem;">
-    <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:var(--gold);color:var(--navy);border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
-    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:var(--beige);border:1px solid rgba(232,224,212,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
-    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(232,224,212,0.5);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
+<div id="cookieBanner" class="cookie-banner">
+  <p>Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies">Más información</a></p>
+  <div class="cookie-actions">
+    <button onclick="acceptCookies()" class="cookie-accept">Aceptar todas</button>
+    <button onclick="rejectCookies()" class="cookie-reject">Solo necesarias</button>
+    <button onclick="rejectCookies()" class="cookie-reject-all">Rechazar todas</button>
   </div>
 </div>
 
 <script>
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
   });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.15 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Close mobile menu on link click
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-  });
-
-  // Form submission via Formspree
-  function enviarFormulario() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const asunto = document.getElementById('asunto').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
-
-    if (!nombre || !email || !asunto || !mensaje) {
-      alert('Por favor, completa los campos obligatorios.');
-      return;
-    }
-
-    const btn = document.querySelector('.form-submit');
-    btn.textContent = 'Enviando...';
-    btn.style.pointerEvents = 'none';
-
-    const data = {
-      nombre: nombre,
-      empresa: document.getElementById('empresa').value.trim(),
-      email: email,
-      telefono: document.getElementById('telefono').value.trim(),
-      asunto: asunto,
-      mensaje: mensaje
-    };
-
-    fetch('https://formspree.io/f/xjgzvqkz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .then(response => {
-      if (response.ok) {
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      } else {
-        const mailtoBody = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
-        window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${mailtoBody}`;
-      }
-    })
-    .catch(() => {
-      const mailtoBody = `Nombre: ${data.nombre}%0AEmpresa: ${data.empresa}%0AEmail: ${data.email}%0ATeléfono: ${data.telefono}%0A%0A${data.mensaje}`;
-      window.location.href = `mailto:sergiomarmol@smlegal.es?subject=${encodeURIComponent(data.asunto)}&body=${mailtoBody}`;
+  // Clic: salta al panel correspondiente
+  const stageBtns = document.querySelectorAll('.stage-btn');
+  stageBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById(btn.dataset.target).scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  });
+
+  // Scroll: resalta el ítem según el panel visible (patrón Attio)
+  const stagePanels = document.querySelectorAll('.stage-panel');
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stageBtns.forEach(b => b.classList.toggle('active', b.dataset.target === entry.target.id));
+        const activeBtn = document.querySelector(`.stage-btn[data-target="${entry.target.id}"]`);
+        if (activeBtn) activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  }, { rootMargin: '-35% 0px -50% 0px', threshold: 0 });
+  stagePanels.forEach(p => spyObserver.observe(p));
+
+  // Scroll reveal genérico (fade + slide escalonado)
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Carrusel de testimonios
+  let tCurrent = 0;
+  const tSlides = document.querySelectorAll('.testi-slide');
+  function goToTesti(n){
+    tSlides[tCurrent].classList.remove('active');
+    tCurrent = (n + tSlides.length) % tSlides.length;
+    tSlides[tCurrent].classList.add('active');
   }
-  // Cookie consent
-  function acceptCookies() {
+  document.getElementById('testiPrev').addEventListener('click', () => goToTesti(tCurrent - 1));
+  document.getElementById('testiNext').addEventListener('click', () => goToTesti(tCurrent + 1));
+  setInterval(() => goToTesti(tCurrent + 1), 6000);
+
+  // Cookies (idéntico patrón a la web actual: document.cookie, no localStorage)
+  function acceptCookies(){
     document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
   }
-
-  function rejectCookies() {
+  function rejectCookies(){
     document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
     document.getElementById('cookieBanner').style.display = 'none';
   }
-
-  // Show banner if no consent yet
-  (function() {
-    if (!document.cookie.includes('cookie_consent=')) {
-      document.getElementById('cookieBanner').style.display = 'flex';
-    } else if (document.cookie.includes('cookie_consent=rejected')) {
-    }
-  })();
-
-  // Testimonials carousel
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.dot');
-
-  function goToSlide(n) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = n;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+  if (!document.cookie.includes('cookie_consent=')) {
+    document.getElementById('cookieBanner').style.display = 'flex';
   }
 
-  function changeSlide(dir) {
-    let next = currentSlide + dir;
-    if (next < 0) next = slides.length - 1;
-    if (next >= slides.length) next = 0;
-    goToSlide(next);
-  }
-
-  setInterval(() => changeSlide(1), 6000);
+  // Menú móvil
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 </script>
-
 </body>
 </html>
