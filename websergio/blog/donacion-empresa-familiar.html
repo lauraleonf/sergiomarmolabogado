@@ -174,7 +174,7 @@
   /* ===== BREADCRUMB ===== */
   .breadcrumb{max-width:760px;margin:0 auto;padding:1.6rem 2rem 0;font-size:0.75rem;color:#5a5a72;}
   .breadcrumb a{text-decoration:none;}
-  .breadcrumb span{margin:0 0.4rem;opacity:0.5;}
+  .breadcrumb span{margin:0 0.4rem;}
 
   /* ===== HERO ===== */
   .article-hero{max-width:820px;margin:0 auto;padding:2.2rem 2rem 3rem;text-align:center;}
@@ -337,6 +337,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span></span><span></span><span></span>
   </div>
 </nav>
+
+<main>
 
 <div class="breadcrumb"><a href="/" style="color:#5a5a72;">Inicio</a><span>›</span><a href="/blog" style="color:#5a5a72;">Blog</a><span>›</span><span style="color:#5a5a72;">Donación de empresa familiar</span></div>
 
@@ -538,6 +540,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </div>
 
+</main>
+
 <footer>
   <p>© 2026 Sergio Mármol Méndez · Abogado Mercantil y Societario</p>
   <div class="footer-links">
@@ -547,12 +551,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2d2d5e;padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
-  <p style="color:#faf7f2;font-size:0.85rem;font-weight:300;margin:0;max-width:600px;font-family:Raleway,sans-serif;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" style="color:#8f7c52;">Más información</a></p>
+<div id="cookieBanner" role="region" aria-label="Aviso de cookies" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2d2d5e;padding:1.2rem 2rem;z-index:9999;box-shadow:0 -2px 20px rgba(0,0,0,0.3);align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+  <p style="color:#faf7f2;font-size:0.85rem;font-weight:300;margin:0;max-width:600px;font-family:Raleway,sans-serif;">Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" style="color:#b8a377;text-decoration:underline;">Más información</a></p>
   <div style="display:flex;gap:0.8rem;">
-    <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:#8f7c52;color:#faf7f2;border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
+    <button onclick="acceptCookies()" style="padding:0.6rem 1.5rem;background:#b8a377;color:#1e1e45;border:none;font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Aceptar todas</button>
     <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:#faf7f2;border:1px solid rgba(250,247,242,0.3);font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;">Solo necesarias</button>
-    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(250,247,242,0.5);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
+    <button onclick="rejectCookies()" style="padding:0.6rem 1.5rem;background:transparent;color:rgba(250,247,242,0.65);border:none;font-family:'Raleway',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">Rechazar todas</button>
   </div>
 </div>
 
