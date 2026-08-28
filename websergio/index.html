@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google Tag Manager (carga condicionada al consentimiento de cookies) -->
+<!-- Google Consent Mode v2 (por defecto, denegado hasta que el usuario decida) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  (function(){
+    var m = document.cookie.match(/(?:^|;\s*)cookie_consent=([^;]+)/);
+    if (m && m[1] === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  })();
+</script>
+<!-- Google Tag Manager (carga siempre; el consentimiento decide qué se mide) -->
 <script>(function(w,d,s,l,i){
   w[l]=w[l]||[];
-  function gtmLoad(){
-    if(w.__gtmLoaded) return;
-    w.__gtmLoaded = true;
-    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
-  }
-  w.__loadGTM = gtmLoad;
-  var m = d.cookie.match(/(?:^|;\s*)cookie_consent=([^;]+)/);
-  if (m && m[1] === 'accepted') { gtmLoad(); }
+  w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PBZTWL8T');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
@@ -412,16 +423,17 @@
   .footer-links a{color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.7rem;letter-spacing:0.08em;transition:color .25s;}
   .footer-links a:hover{color:var(--gold);}
 
-  .cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--navy-dark);
-    padding:1.2rem 2rem;box-shadow:0 -2px 30px rgba(0,0,0,0.25);align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
-  .cookie-banner p{color:var(--paper);font-size:0.83rem;font-weight:300;margin:0;max-width:600px;}
+  .cookie-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(10,10,26,0.55);
+    align-items:center;justify-content:center;padding:1.5rem;}
+  .cookie-banner{background:var(--navy-dark);border-radius:8px;padding:1.8rem 2rem;max-width:440px;width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);}
+  .cookie-banner p{color:var(--paper);font-size:0.83rem;font-weight:300;line-height:1.7;margin:0 0 1.3rem;max-width:none;}
   .cookie-banner a{color:var(--gold);}
-  .cookie-actions{display:flex;gap:0.7rem;flex-wrap:wrap;}
-  .cookie-accept,.cookie-reject,.cookie-reject-all{padding:0.6em 1.3em;border:none;font-family:'Raleway',sans-serif;
+  .cookie-actions{display:flex;flex-direction:column;gap:0.6rem;}
+  .cookie-accept,.cookie-reject,.cookie-reject-all{width:100%;padding:0.75em 1.3em;border:none;font-family:'Raleway',sans-serif;
     font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:3px;}
   .cookie-accept{background:var(--gold);color:var(--navy-dark);font-weight:700;}
-  .cookie-reject{background:transparent;color:var(--paper);border:1px solid rgba(250,247,242,0.3);}
-  .cookie-reject-all{background:transparent;color:rgba(250,247,242,0.65);text-decoration:underline;}
+  .cookie-reject,.cookie-reject-all{background:transparent;color:var(--paper);border:1px solid rgba(250,247,242,0.3);}
 
   @media(max-width:1150px){
     .nav-links{display:none;}
@@ -747,12 +759,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- COOKIE BANNER -->
-<div id="cookieBanner" class="cookie-banner" role="region" aria-label="Aviso de cookies">
-  <p>Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies">Más información</a></p>
-  <div class="cookie-actions">
-    <button onclick="acceptCookies()" class="cookie-accept">Aceptar todas</button>
-    <button onclick="rejectCookies()" class="cookie-reject">Solo necesarias</button>
-    <button onclick="rejectCookies()" class="cookie-reject-all">Rechazar todas</button>
+<div id="cookieOverlay" class="cookie-overlay">
+  <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Aviso de cookies">
+    <p>Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies">Más información</a></p>
+    <div class="cookie-actions">
+      <button onclick="acceptCookies()" class="cookie-accept">Aceptar todas</button>
+      <button onclick="rejectCookies()" class="cookie-reject">Solo necesarias</button>
+      <button onclick="rejectCookies()" class="cookie-reject-all">Rechazar todas</button>
+    </div>
   </div>
 </div>
 
@@ -802,16 +816,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // Cookies (idéntico patrón a la web actual: document.cookie, no localStorage)
   function acceptCookies(){
-    document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax";
-    document.getElementById('cookieBanner').style.display = 'none';
-    if (window.__loadGTM) window.__loadGTM();
+    document.cookie = "cookie_consent=accepted;max-age=31536000;path=/;SameSite=Lax;Secure";
+    document.getElementById('cookieOverlay').style.display = 'none';
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
   }
   function rejectCookies(){
-    document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax";
-    document.getElementById('cookieBanner').style.display = 'none';
+    document.cookie = "cookie_consent=rejected;max-age=31536000;path=/;SameSite=Lax;Secure";
+    document.getElementById('cookieOverlay').style.display = 'none';
+    gtag('consent', 'update', { 'analytics_storage': 'denied' });
   }
   if (!document.cookie.includes('cookie_consent=')) {
-    document.getElementById('cookieBanner').style.display = 'flex';
+    document.getElementById('cookieOverlay').style.display = 'flex';
   }
 
   // Envío del formulario de contacto (Formspree, sin recargar la página)
