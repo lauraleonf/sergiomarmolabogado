@@ -260,7 +260,7 @@
   /* ===== ABOUT (asimétrico, aireado) ===== */
   .about{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:6rem;align-items:center;}
   .about-visual{position:relative;}
-  .about-visual img{width:100%;max-width:420px;filter:grayscale(20%) contrast(1.02);}
+  .about-visual img{width:100%;max-width:420px;height:auto;filter:grayscale(20%) contrast(1.02);}
   .about-visual::before{content:'';position:absolute;top:-2rem;left:-2rem;width:100%;max-width:420px;height:100%;border:1px solid var(--gold);z-index:-1;}
   h2.big{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(2.7rem,4.8vw,3.9rem);line-height:1.14;letter-spacing:-0.01em;color:var(--navy);margin-bottom:2rem;}
   h2.big em{font-style:italic;color:var(--gold-text);}
@@ -564,7 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="about-visual">
       <picture>
         <source srcset="sergiomarmolabogado-home.webp" type="image/webp">
-        <img src="sergiomarmolabogado-home.jpg" alt="Sergio Mármol, abogado mercantilista" title="Sergio Mármol, abogado mercantilista" loading="eager">
+        <img src="sergiomarmolabogado-home.jpg" alt="Sergio Mármol, abogado mercantilista" title="Sergio Mármol, abogado mercantilista" loading="eager" width="1092" height="1008">
       </picture>
     </div>
     <div class="about-text">
@@ -768,7 +768,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- COOKIE BANNER -->
 <div id="cookieOverlay" class="cookie-overlay">
   <div id="cookieBanner" class="cookie-banner" role="region" aria-label="Aviso de cookies">
-    <p>Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" title="Política de cookies">Más información</a></p>
+    <p>Esta web usa cookies necesarias para su funcionamiento y cookies analíticas opcionales (Google Analytics) para mejorar tu experiencia. <a href="/politica-cookies" title="Política de cookies">Más información sobre cookies</a></p>
     <div class="cookie-actions">
       <button onclick="acceptCookies()" class="cookie-accept">Aceptar todas</button>
       <button onclick="rejectCookies()" class="cookie-reject">Solo necesarias</button>
