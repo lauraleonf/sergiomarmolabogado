@@ -320,6 +320,9 @@
     .related-grid{grid-template-columns:1fr;}
     .author-box{flex-direction:column;}
   }
+  .footer-subvencion{max-width:820px;margin:2.2rem auto 0;padding-top:2rem;border-top:1px solid rgba(184,163,119,0.25);}
+  .footer-subvencion img{display:block;width:100%;height:auto;border-radius:4px;}
+  @media(max-width:640px){.footer-subvencion{max-width:340px;}}
 </style>
 </head>
 <body>
@@ -565,6 +568,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/aviso-legal" title="Aviso legal">Aviso Legal</a>
     <a href="/politica-privacidad" title="Política de privacidad">Política de Privacidad</a>
     <a href="/politica-cookies" title="Política de cookies">Política de Cookies</a>
+  </div>
+  <div class="footer-subvencion">
+    <picture>
+      <source media="(max-width:640px)" srcset="/subvencion-diputacion-jaen-movil.webp" width="1000" height="933">
+      <img src="/subvencion-diputacion-jaen.webp" width="1800" height="225" loading="lazy" alt="Empresa beneficiaria de ayudas de la Diputación Provincial de Jaén, en el marco del Plan de Empleo y Empresa">
+    </picture>
   </div>
 </footer>
 
