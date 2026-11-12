@@ -68,6 +68,20 @@
   "telephone": "+34677074680",
   "email": "sergiomarmol@smlegal.es",
   "priceRange": "€€",
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Despacho de Madrid",
+      "address": { "@type": "PostalAddress", "streetAddress": "Calle Sánchez Preciado, 22, 3.º A", "postalCode": "28039", "addressLocality": "Madrid", "addressRegion": "Comunidad de Madrid", "addressCountry": "ES" },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Calle+S%C3%A1nchez+Preciado+22%2C+28039+Madrid"
+    },
+    {
+      "@type": "Place",
+      "name": "Despacho de Jaén",
+      "address": { "@type": "PostalAddress", "streetAddress": "Avenida de Madrid, 11, escalera izquierda, entreplanta izquierda", "postalCode": "23003", "addressLocality": "Jaén", "addressRegion": "Andalucía", "addressCountry": "ES" },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Avenida+de+Madrid+11%2C+23003+Ja%C3%A9n"
+    }
+  ],
   "areaServed": [
     { "@type": "City", "name": "Madrid", "addressCountry": "ES" },
     { "@type": "City", "name": "Jaén", "addressCountry": "ES" },
@@ -155,10 +169,10 @@
     },
     {
       "@type": "Question",
-      "name": "¿Atiendes fuera de Madrid, Jaén y Almería?",
+      "name": "¿Atiendes fuera de Madrid y Jaén?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Tengo presencia principal en esas tres provincias, y ofrezco asesoramiento online para el resto de España. La mayoría de gestiones se pueden resolver perfectamente en remoto."
+        "text": "Sí. Tengo despachos en Madrid y Jaén, y asesoro online al resto de España, incluida Almería. La mayoría de gestiones se pueden resolver perfectamente en remoto."
       }
     },
     {
@@ -482,13 +496,18 @@
 
   /* ===== AREAS / COBERTURA ===== */
   .areas{background:#fff;text-align:center;}
-  .areas-inner{max-width:900px;margin:0 auto;}
+  .areas-inner{max-width:1000px;margin:0 auto;}
   .areas-sub{font-size:0.95rem;color:var(--ink-soft);font-weight:300;max-width:520px;margin:0 auto 1rem;line-height:1.7;}
   .areas-grid{display:flex;justify-content:center;gap:1.5rem;margin-top:2.5rem;flex-wrap:wrap;}
-  .area-item{padding:1.8rem 2.4rem;border:1px solid var(--line);border-radius:4px;text-decoration:none;transition:all .25s;min-width:160px;}
-  .area-item:hover{border-color:var(--gold-deep);background:rgba(184,163,119,0.05);}
-  .area-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--navy);}
-  .area-detail{font-size:0.76rem;color:var(--ink-soft);margin-top:0.3rem;letter-spacing:0.03em;}
+  .area-item{flex:1 1 240px;max-width:305px;padding:2rem 1.2rem;background:var(--paper);border:1px solid rgba(184,163,119,0.5);border-top:3px solid var(--gold);border-radius:4px;text-decoration:none;box-shadow:0 8px 20px -14px rgba(45,45,94,0.45);transition:all .25s;}
+  .area-address{font-style:normal;font-size:0.85rem;line-height:1.65;color:var(--ink-soft);font-weight:400;margin-top:0.9rem;}
+  .area-links{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:1.1rem;font-size:0.8rem;}
+  .area-links a{color:var(--gold-text);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(184,163,119,0.7);transition:color .25s,border-color .25s;}
+  .area-links a:hover{color:var(--navy);border-color:var(--navy);}
+  .area-item.area-online{background:#fff;border-top:1px solid rgba(184,163,119,0.5);box-shadow:none;}
+  .area-item.area-online .area-name{font-size:1.6rem;}
+  .area-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:500;color:var(--navy);line-height:1.2;}
+  .area-detail{font-size:0.74rem;color:var(--gold-text);margin-top:0.5rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
 
   /* ===== FAQ ===== */
   .faq{background:#fff;}
@@ -511,6 +530,10 @@
   .contact-item{color:var(--paper);text-decoration:none;font-size:0.95rem;font-weight:300;opacity:0.85;transition:opacity .25s, color .25s;}
   .contact-item:hover{opacity:1;color:var(--gold);}
 
+  .contact-offices{display:flex;flex-wrap:wrap;justify-content:center;gap:1.8rem 4rem;margin-top:2.4rem;}
+  .contact-office-label{display:block;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.4rem;}
+  .contact-office address{font-style:normal;font-size:0.88rem;line-height:1.7;color:rgba(250,247,242,0.8);font-weight:300;}
+  .contact-offices-note{font-size:0.8rem;color:rgba(250,247,242,0.6);font-weight:300;margin-top:1.4rem;}
   .contact-divider{width:50px;height:1px;background:rgba(250,247,242,0.15);margin:2.5rem auto 1.2rem;}
   .or-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,247,242,0.6);margin-bottom:2rem;}
 
@@ -529,10 +552,31 @@
   .form-privacy{font-size:0.7rem;color:rgba(250,247,242,0.6);margin-top:1rem;text-align:center;}
   .form-privacy a{color:var(--gold);text-decoration:underline;}
 
-  footer{background:var(--navy-dark);color:rgba(250,247,242,0.55);text-align:center;padding:2.8rem 2rem;font-size:0.72rem;letter-spacing:0.06em;line-height:1.8;}
-  .footer-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem;}
-  .footer-links a{color:rgba(250,247,242,0.6);text-decoration:none;font-size:0.7rem;letter-spacing:0.08em;transition:color .25s;}
+  footer{background:var(--navy-dark);color:rgba(250,247,242,0.72);padding:3.4rem 2rem 2.2rem;font-size:0.82rem;letter-spacing:0.02em;line-height:1.75;}
+  .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.25fr 1fr 1.2fr 1.3fr;gap:2.4rem 3rem;text-align:left;}
+  .footer-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper);margin-bottom:0.7rem;line-height:1.2;}
+  .footer-brand p{font-weight:300;margin-bottom:0.5rem;}
+  .footer-title{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:700;padding-bottom:0.7rem;margin-bottom:1rem;border-bottom:1px solid rgba(184,163,119,0.3);}
+  .footer-col ul{list-style:none;padding:0;margin:0;}
+  .footer-col li{margin-bottom:0.55rem;}
+  .footer-col a,.footer-brand a{color:rgba(250,247,242,0.85);text-decoration:none;transition:color .25s;}
+  .footer-col a:hover,.footer-brand a:hover{color:var(--gold);}
+  .footer-office{margin-bottom:1rem;}
+  .footer-office strong{display:block;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.15rem;}
+  .footer-office address{font-style:normal;font-weight:300;line-height:1.65;}
+  .footer-note{font-size:0.78rem;font-weight:300;margin-bottom:0.9rem;}
+  .footer-contact{margin-top:0.2rem;}
+  .footer-contact a{display:inline-block;}
+  .footer-brand .footer-social{margin-top:1rem;}
+  .footer-social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(184,163,119,0.5);border-radius:50%;transition:border-color .25s,color .25s;}
+  .footer-social a:hover{border-color:var(--gold);}
+  .footer-bottom{max-width:1100px;margin:2.6rem auto 0;padding-top:1.6rem;border-top:1px solid rgba(250,247,242,0.12);text-align:center;font-size:0.72rem;}
+  .footer-bottom p{margin-bottom:0.2rem;}
+  .footer-links{display:flex;gap:1.8rem;justify-content:center;flex-wrap:wrap;margin:0.9rem 0;}
+  .footer-links a{color:rgba(250,247,242,0.8);text-decoration:none;font-size:0.72rem;letter-spacing:0.06em;transition:color .25s;}
   .footer-links a:hover{color:var(--gold);}
+  @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){footer{padding:2.8rem 1.4rem 2rem;}.footer-inner{grid-template-columns:1fr;gap:2rem;}}
 
   .cookie-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(10,10,26,0.55);
     align-items:center;justify-content:center;padding:1.5rem;}
@@ -623,7 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="hero-grid">
     <p class="hero-eyebrow">Abogado Mercantil · Asesoramiento Estratégico</p>
-    <h1>Abogado mercantil para <em>empresas</em> y <em>autónomos</em></h1>
+    <h1>Abogado mercantil para <em>empresas y autónomos</em></h1>
     <p class="hero-sub">Ayudo a crecer tu negocio y lo protejo cuando surgen problemas. Antes de ser abogado, he sido administrador y asesor legal interno de una empresa. Hoy aplico esa doble mirada — legal y de negocio — para acompañar a pymes, autónomos y startups.</p>
     <a href="#contacto" class="btn-primary" title="Ir al formulario de contacto">Hablemos</a>
   </div>
@@ -642,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><strong>Qué hago:</strong> asesoro en derecho mercantil y societario para constituir sociedades, redactar contratos y ordenar pactos de socios.</li>
         <li><strong>A quién ayudo:</strong> pymes, autónomos y startups que necesitan decidir, crecer o resolver conflictos con socios.</li>
         <li><strong>Cómo trabajo:</strong> combino visión jurídica y empresarial para anticipar riesgos y acompañar decisiones que afectan al negocio.</li>
-        <li><strong>Dónde atiendo:</strong> presencia en Madrid y Jaén, además de asesoramiento online en toda España.</li>
+        <li><strong>Dónde atiendo:</strong> despachos en Madrid y Jaén, además de asesoramiento online en toda España.</li>
         <li><strong>Siguiente paso:</strong> empieza por el <a href="/asesoramiento-mercantil-societario" title="Asesoramiento mercantil y societario">área mercantil</a> o por la <a href="/asesoramiento-estrategico" title="Asesoramiento estratégico para empresas">consultoría estratégica</a>.</li>
       </ul>
     </div>
@@ -770,12 +814,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="areas">
   <div class="areas-inner">
     <span class="label">Cobertura</span>
-    <h2 class="big">Asesoría mercantil presencial y online en Madrid, Jaén y Almería</h2>
-    <p class="areas-sub">Mi actividad principal se centra en estas zonas, aunque ofrezco asesoramiento online en toda España y flexibilidad para desplazarme donde me necesites.</p>
+    <h2 class="big">Asesoría mercantil en Madrid y Jaén, y online en toda España</h2>
+    <p class="areas-sub">Tengo despacho en Madrid y en Jaén, con atención presencial con cita previa. Desde ahí asesoro online al resto de España y me desplazo cuando el asunto lo requiere.</p>
     <div class="areas-grid">
-      <a href="/abogado-mercantil-madrid" class="area-item" title="Abogado mercantil en Madrid"><div class="area-name">Madrid</div> <div class="area-detail">Presencial y online</div></a>
-      <a href="/abogado-mercantil-jaen" class="area-item" title="Abogado mercantil en Jaén"><div class="area-name">Jaén</div> <div class="area-detail">Presencial y online</div></a>
-      <div class="area-item"><div class="area-name">Almería</div> <div class="area-detail">Presencial y online</div></div>
+      <div class="area-item">
+        <div class="area-name">Madrid</div>
+        <div class="area-detail">Despacho y online</div>
+        <address class="area-address">Calle Sánchez Preciado, 22, 3.º A<br>28039 Madrid</address>
+        <div class="area-links">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Calle+S%C3%A1nchez+Preciado+22%2C+28039+Madrid" target="_blank" rel="noopener" title="Cómo llegar al despacho de Madrid (Google Maps)">Cómo llegar</a>
+          <a href="/abogado-mercantil-madrid" title="Abogado mercantil en Madrid">Más información</a>
+        </div>
+      </div>
+      <div class="area-item">
+        <div class="area-name">Jaén</div>
+        <div class="area-detail">Despacho y online</div>
+        <address class="area-address">Avenida de Madrid, 11<br>escalera izquierda, entreplanta izquierda<br>23003 Jaén</address>
+        <div class="area-links">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+de+Madrid+11%2C+23003+Ja%C3%A9n" target="_blank" rel="noopener" title="Cómo llegar al despacho de Jaén (Google Maps)">Cómo llegar</a>
+          <a href="/abogado-mercantil-jaen" title="Abogado mercantil en Jaén">Más información</a>
+        </div>
+      </div>
+      <div class="area-item area-online">
+        <div class="area-name">Resto de España</div>
+        <div class="area-detail">Online</div>
+        <p class="area-address">Asesoramiento por videollamada y seguimiento online, sin necesidad de desplazarte.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -866,8 +930,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Sí. Desde autónomos que dan el salto a sociedad limitada hasta empresas con varios socios, en fase de crecimiento o en proceso de venta. El enfoque se adapta a cada situación, no al revés.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Atiendes fuera de Madrid, Jaén y Almería?</summary>
-        <p>Sí. Tengo presencia principal en esas tres provincias, y ofrezco asesoramiento online para el resto de España. La mayoría de gestiones se pueden resolver perfectamente en remoto.</p>
+        <summary>¿Atiendes fuera de Madrid y Jaén?</summary>
+        <p>Sí. Tengo despachos en Madrid y Jaén, y asesoro online al resto de España, incluida Almería. La mayoría de gestiones se pueden resolver perfectamente en remoto.</p>
       </details>
       <details class="faq-item">
         <summary>¿Qué hace un abogado mercantil?</summary>
@@ -909,6 +973,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" class="contact-item" title="Perfil de LinkedIn de Sergio Mármol">in LinkedIn</a>
   </div>
 
+  <div class="contact-offices">
+    <div class="contact-office"><span class="contact-office-label">Madrid</span><address>Calle Sánchez Preciado, 22, 3.º A<br>28039 Madrid</address></div>
+    <div class="contact-office"><span class="contact-office-label">Jaén</span><address>Avenida de Madrid, 11, escalera izquierda,<br>entreplanta izquierda · 23003 Jaén</address></div>
+  </div>
+  <p class="contact-offices-note">Atención presencial con cita previa</p>
+
   <div class="contact-divider"></div>
   <p class="or-label">O si lo prefieres</p>
 
@@ -932,21 +1002,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <footer>
-  <p>© 2026 Sergio Mármol — Abogado Mercantil y Societario</p>
-  <p>Colegiado ejerciente · Ilustre Colegio de Abogados de Jaén · Abogado mercantilista en Madrid, Jaén y Almería</p>
-  <p>Contenido revisado por el equipo de Sergio Mármol Abogado</p>
-  <div class="footer-links">
-    <a href="/abogado-mercantil-jaen" title="Abogado mercantil en Jaén">Abogado Mercantil Jaén</a>
-    <a href="/abogado-mercantil-madrid" title="Abogado mercantil en Madrid">Abogado Mercantil Madrid</a>
-    <a href="/aviso-legal" title="Aviso legal">Aviso Legal</a>
-    <a href="/politica-privacidad" title="Política de privacidad">Política de Privacidad</a>
-    <a href="/politica-cookies" title="Política de cookies">Política de Cookies</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">Sergio Mármol</div>
+      <p>Abogado mercantil y societario para pymes, autónomos y startups.</p>
+      <p>Colegiado ejerciente en el Ilustre Colegio de Abogados de Jaén.</p>
+      <p class="footer-social"><a href="https://www.linkedin.com/in/sergiomarmolmendez/" target="_blank" rel="me noopener" title="Perfil de LinkedIn de Sergio Mármol" aria-label="LinkedIn de Sergio Mármol"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></p>
+    </div>
+    <div class="footer-col" role="navigation" aria-label="Servicios">
+      <p class="footer-title">Servicios</p>
+      <ul>
+        <li><a href="/asesoramiento-mercantil-societario" title="Asesoramiento mercantil y societario">Asesoramiento mercantil y societario</a></li>
+        <li><a href="/asesoramiento-estrategico" title="Asesoramiento estratégico para empresas">Asesoramiento estratégico</a></li>
+        <li><a href="/pactos-de-socios" title="Pactos de socios">Pactos de socios</a></li>
+        <li><a href="/abogado-mercantil-madrid" title="Abogado mercantil en Madrid">Abogado mercantil en Madrid</a></li>
+        <li><a href="/abogado-mercantil-jaen" title="Abogado mercantil en Jaén">Abogado mercantil en Jaén</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" role="navigation" aria-label="Para leer">
+      <p class="footer-title">Para leer</p>
+      <ul>
+        <li><a href="/blog/pacto-de-socios" title="Qué es un pacto de socios">Qué es un pacto de socios</a></li>
+        <li><a href="/blog/problemas-socio-empresa" title="Problemas con un socio: salidas legales">Problemas con un socio</a></li>
+        <li><a href="/blog/responsabilidad-administrador-sl" title="Responsabilidad del administrador de una SL">Responsabilidad del administrador</a></li>
+        <li><a href="/blog/autonomo-sl" title="Cuándo pasar de autónomo a sociedad limitada">De autónomo a sociedad limitada</a></li>
+        <li><a href="/blog/clausulas-contrato-mercantil" title="Cláusulas de un contrato mercantil">Cláusulas de un contrato mercantil</a></li>
+        <li><a href="/blog" title="Blog de derecho mercantil y societario">Ver todo el blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-title">Despachos y contacto</p>
+      <div class="footer-office"><strong>Madrid</strong><address>Calle Sánchez Preciado, 22, 3.º A<br>28039 Madrid</address></div>
+      <div class="footer-office"><strong>Jaén</strong><address>Avenida de Madrid, 11, escalera izquierda,<br>entreplanta izquierda · 23003 Jaén</address></div>
+      <p class="footer-note">Atención presencial con cita previa.</p>
+      <p class="footer-contact"><a href="mailto:sergiomarmol@smlegal.es" title="Enviar email a Sergio Mármol">sergiomarmol@smlegal.es</a><br><a href="tel:+34677074680" title="Llamar a Sergio Mármol">+34 677 07 46 80</a></p>
+    </div>
   </div>
   <div class="footer-subvencion">
     <picture>
       <source media="(max-width:640px)" srcset="/subvencion-diputacion-jaen-movil.webp" width="1000" height="933">
       <img src="/subvencion-diputacion-jaen.webp" width="1800" height="225" loading="lazy" alt="Empresa beneficiaria de ayudas de la Diputación Provincial de Jaén, en el marco del Plan de Empleo y Empresa">
     </picture>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Sergio Mármol Méndez · Abogado Mercantil y Societario</p>
+    <div class="footer-links">
+      <a href="/aviso-legal" title="Aviso legal">Aviso Legal</a>
+      <a href="/politica-privacidad" title="Política de privacidad">Política de Privacidad</a>
+      <a href="/politica-cookies" title="Política de cookies">Política de Cookies</a>
+    </div>
+    <p>Contenido revisado por el equipo de Sergio Mármol Abogado</p>
   </div>
 </footer>
 
