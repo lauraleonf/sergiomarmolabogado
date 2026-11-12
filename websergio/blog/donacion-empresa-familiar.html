@@ -56,11 +56,13 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
+  "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#article",
   "headline": "Donación de empresa a los hijos: requisitos para la reducción del 95-99%",
-  "description": "Guía práctica sobre los beneficios fiscales de donar una empresa familiar, tanto para quien la recibe (reducción del art. 20.6 LISD) como para quien la dona (diferimiento en el IRPF, art. 33.3.c), con las novedades del Tribunal Supremo de febrero de 2026 y las diferencias entre comunidades autónomas.",
+  "description": "Guía práctica sobre los beneficios fiscales de donar una empresa, tanto para quien la recibe (reducción del art. 20.6 LISD) como para quien la dona (diferimiento en el IRPF, art. 33.3.c), con las novedades del Tribunal Supremo de febrero de 2026 y las diferencias entre comunidades autónomas.",
   "author": {
     "@type": "Person",
+    "@id": "https://sergiomarmolabogado.es/#attorney",
     "name": "Sergio Mármol Méndez",
     "jobTitle": "Abogado Mercantil y Societario",
     "url": "https://sergiomarmolabogado.es",
@@ -68,15 +70,23 @@
     "sameAs": "https://www.linkedin.com/in/sergiomarmolmendez/"
   },
   "publisher": {
-    "@type": "Person",
-    "name": "Sergio Mármol Méndez",
+    "@type": "LegalService",
+    "@id": "https://sergiomarmolabogado.es/#legalservice",
+    "name": "Sergio Mármol Abogado",
     "url": "https://sergiomarmolabogado.es",
     "image": "https://sergiomarmolabogado.es/sergiomarmolabogado.png"
   },
   "datePublished": "2026-08-24",
   "dateModified": "2026-08-24",
-  "mainEntityOfPage": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar",
-  "keywords": "donación empresa familiar impuestos, reducción 95% donación empresa, sucesión empresarial donación, impuesto sucesiones y donaciones empresa familiar, donación participaciones sociedad reducción fiscal, abogado sucesión empresarial Madrid Jaén"
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#webpage"
+  },
+  "keywords": "donación empresa hijos impuestos, reducción 95% donación empresa, sucesión empresarial donación, impuesto sucesiones y donaciones empresa, donación participaciones sociedad reducción fiscal, abogado sucesión empresarial Madrid Jaén",
+  "inLanguage": "es-ES",
+  "isPartOf": {
+    "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#webpage"
+  }
 }
 </script>
 
@@ -85,10 +95,14 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#faq",
+  "isPartOf": {
+    "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#webpage"
+  },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué reducción fiscal se aplica cuando se dona una empresa familiar?",
+      "name": "¿Qué reducción fiscal se aplica cuando se dona una empresa a los hijos?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "El art. 20.6 de la Ley del ISD permite reducir un 95% el valor de la empresa donada. Madrid (desde julio 2026) y Andalucía lo elevan al 99%, si se cumplen los requisitos."
@@ -128,7 +142,7 @@
     },
     {
       "@type": "Question",
-      "name": "¿Necesito un abogado para planificar la donación de mi empresa familiar?",
+      "name": "¿Necesito un abogado para planificar la donación de mi empresa?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Es muy recomendable: un error en los requisitos puede hacer perder el beneficio por completo. Conviene revisar la estructura societaria antes de firmar, coordinándolo con tu asesor fiscal."
@@ -143,11 +157,52 @@
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#breadcrumb",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sergiomarmolabogado.es" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sergiomarmolabogado.es/blog" },
-    { "@type": "ListItem", "position": 3, "name": "Donación de empresa a los hijos: requisitos para la reducción del 95-99%", "item": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar" }
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://sergiomarmolabogado.es"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://sergiomarmolabogado.es/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Donación de empresa a los hijos: requisitos para la reducción del 95-99%",
+      "item": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar"
+    }
   ]
+}
+</script>
+<!-- Schema: WebPage (conecta artículo, sitio, despacho y abogado por @id) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#webpage",
+  "url": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar",
+  "name": "Donación de empresa a los hijos: requisitos para la reducción del 95-99%",
+  "inLanguage": "es-ES",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://sergiomarmolabogado.es/#website",
+    "url": "https://sergiomarmolabogado.es",
+    "name": "Sergio Mármol Abogado"
+  },
+  "breadcrumb": {
+    "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#breadcrumb"
+  },
+  "mainEntity": {
+    "@id": "https://sergiomarmolabogado.es/blog/donacion-empresa-familiar#article"
+  },
+  "datePublished": "2026-08-24",
+  "dateModified": "2026-08-24"
 }
 </script>
 
@@ -410,7 +465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="article-body">
 
-    <h2>¿Qué reducción fiscal se aplica cuando se dona una empresa familiar?</h2>
+    <h2>¿Qué reducción fiscal se aplica cuando se dona una empresa a los hijos?</h2>
     <p class="answer-direct">El artículo 20.6 de la Ley del Impuesto sobre Sucesiones y Donaciones permite reducir un 95% el valor de la empresa donada, sobre el impuesto que paga quien la recibe. Varias comunidades —entre ellas Madrid desde julio de 2026 y Andalucía— elevan ese porcentaje al 99%, si se cumplen los requisitos legales.</p>
 
     <div class="law-box">
@@ -511,10 +566,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
 
-    <h2>Preguntas frecuentes sobre la donación de empresa familiar</h2>
+    <h2>Preguntas frecuentes sobre la donación de empresa a los hijos</h2>
     <div class="faq-block">
       <details class="faq-item">
-        <summary>¿Qué reducción fiscal se aplica cuando se dona una empresa familiar?</summary>
+        <summary>¿Qué reducción fiscal se aplica cuando se dona una empresa a los hijos?</summary>
         <p>El art. 20.6 de la Ley del ISD permite reducir un 95% el valor de la empresa donada. Madrid (desde julio 2026) y Andalucía lo elevan al 99%, si se cumplen los requisitos.</p>
       </details>
       <details class="faq-item">
@@ -534,7 +589,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>Cada comunidad fija su propio porcentaje, círculo familiar y plazo de mantenimiento. La misma donación tributa muy distinto según dónde resida quien la recibe.</p>
       </details>
       <details class="faq-item">
-        <summary>¿Necesito un abogado para planificar la donación de mi empresa familiar?</summary>
+        <summary>¿Necesito un abogado para planificar la donación de mi empresa?</summary>
         <p>Es muy recomendable: un error en los requisitos puede hacer perder el beneficio por completo. Conviene revisar la estructura societaria antes de firmar, coordinándolo con tu asesor fiscal.</p>
       </details>
     </div>
@@ -546,7 +601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="article-cta">
-    <h3>¿Te estás planteando donar tu empresa familiar?</h3>
+    <h3>¿Te estás planteando donar tu empresa?</h3>
     <p>Cuéntame tu situación. Reviso la estructura societaria y te explico qué requisitos aplican en tu caso, coordinando la parte fiscal con tu asesor.</p>
     <a href="/#contacto" class="cta-btn" title="Ir al formulario de contacto">Hablemos</a>
   </div>
@@ -577,7 +632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <a href="/blog/autonomo-sl" class="related-card" title="Cuándo pasar de autónomo a SL">
         <div class="related-card-cat">Estructuración Societaria</div>
-        <div class="related-card-title">De autónomo a sociedad limitada: cómo dar el salto</div>
+        <div class="related-card-title">¿Cuándo pasar de autónomo a sociedad limitada?</div>
       </a>
     </div>
   </div>
